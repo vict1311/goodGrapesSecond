@@ -11,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {User.class}, version = 1, exportSchema = false)
+@Database(entities = {UserDB.class}, version = 1, exportSchema = false)
 public abstract class UserRoomDatabase extends RoomDatabase {
 
     // we define our DAO and create an abstract method for getting that DAO
@@ -53,9 +53,9 @@ private static RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Ca
         databaseWriteExecutor.execute(() -> {
             UserDAO dao = INSTANCE.userDao();
             //create new User object use the DAO method insertUser to add it to the database
-            User victor = new User("Victor Jensen", "vict1311", "123vict456");
+            UserDB victor = new UserDB("Victor Jensen", "vict1311", "123vict456");
             dao.insertUser(victor);
-            User dummy = new User("Dummy Dunder", "dummy123", "dummyPassword");
+            UserDB dummy = new UserDB("Dummy Dunder", "dummy123", "dummyPassword");
             dao.insertUser(dummy);
         });
     }

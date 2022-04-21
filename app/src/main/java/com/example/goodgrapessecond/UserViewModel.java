@@ -10,7 +10,7 @@ import java.util.List;
 
 public class UserViewModel extends AndroidViewModel {
 
-    private LiveData<List<User>> allUsers;
+    private LiveData<List<UserDB>> allUsers;
     private UserRepository mRepository;
 
     public UserViewModel(@NonNull Application application) {
@@ -21,10 +21,10 @@ public class UserViewModel extends AndroidViewModel {
         allUsers = mRepository.getAllUsers();
     }
 
-    public LiveData<List<User>> getAllUsers() {
+    public LiveData<List<UserDB>> getAllUsers() {
         return allUsers;
     }
-    public void insertUser(User user) {
+    public void insertUser(UserDB user) {
         mRepository.insertUser(user);
     }
 }

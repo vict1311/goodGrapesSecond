@@ -13,10 +13,10 @@ import java.util.List;
 public interface UserDAO {
     //method for inserting Users into the user database
     @Insert
-    public void insertUser(User user);
+    public void insertUser(UserDB user);
 
     //query for selecting all users and ordering them by userID
-    @Query("SELECT * from User ORDER BY userID ASC")
+    @Query("SELECT * from UserDB ORDER BY userID ASC")
     // we use a List here because it is an interface that associates its objects with their index numbers
-    public LiveData<List<User>> getAllUsers();
+    public LiveData<List<UserDB>> getAllUsers();
 }
