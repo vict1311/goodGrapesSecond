@@ -29,6 +29,8 @@ public class TypeOfWine extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.search:
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.profile:
                         startActivity(new Intent(getApplicationContext(),Profile.class));

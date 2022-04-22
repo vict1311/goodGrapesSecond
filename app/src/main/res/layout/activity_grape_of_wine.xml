@@ -45,7 +45,7 @@
     <SearchView
         android:layout_width="322dp"
         android:layout_height="48dp"
-
+        android:background="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
