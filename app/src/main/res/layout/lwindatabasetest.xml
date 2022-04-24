@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns:tools="http://schemas.android.com/tools"
+    xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+    xmlns:x="urn:schemas-microsoft-com:office:excel"
+    xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author tools:ignore="ExtraText">Ida</Author>
+  <LastAuthor>Christiansen</LastAuthor>
+  <Created>2022-04-23T09:14:23Z</Created>
+  <LastSaved>2022-04-23T09:41:21Z</LastSaved>
+  <Version>16.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>15620</WindowHeight>
+  <WindowWidth>27640</WindowWidth>
+  <WindowTopX>780</WindowTopX>
+  <WindowTopY>1000</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s16">
+   <NumberFormat ss:Format="yyyy\-mm\-dd\ hh:mm:ss"/>
+  </Style>
+  <Style ss:ID="s66">
+   <Borders/>
+  </Style>
+  <Style ss:ID="s69">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s70">
+   <Borders/>
+   <Interior/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Ark1">
+  <Table ss:ExpandedColumnCount="21" ss:ExpandedRowCount="4" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="16">
+   <Column ss:AutoFitWidth="0" ss:Width="16"/>
+   <Column ss:AutoFitWidth="0" ss:Width="287"/>
+   <Column ss:AutoFitWidth="0" ss:Width="91"/>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s69"><Data ss:Type="String">Name</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Wine</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Country</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Colour</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s66"><Data ss:Name="String">Hugel, Riesling Jubilee Grand Cru, Altenberg de Bergheim</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Wine="String">Riesling Jubilee</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Country="String">France</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">White</Data></Cell>
+    <Cell ss:Index="20" ss:StyleID="s16"/>
+    <Cell ss:StyleID="s16"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s66"><Data ss:Name="String">Brown Brothers, Shiraz, Victoria</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Wine="String">Shiraz</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Country="String">France</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Red</Data></Cell>
+    <Cell ss:Index="20" ss:StyleID="s16"/>
+    <Cell ss:StyleID="s16"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s66"><Data ss:Name="String">Trapet, Gewurztraminer Grand Cru, Sonnenglanz</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Wine="String">Gewurztraminer</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Country="String">Australia</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">White</Data></Cell>
+    <Cell ss:Index="20" ss:StyleID="s16"/>
+    <Cell ss:StyleID="s16"
+        tools:ignore="TooManyViews" />
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>12</ActiveRow>
+     <ActiveCol>2</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
