@@ -1,9 +1,19 @@
 package com.example.goodgrapessecond;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 
 import android.os.Bundle;
+
+import android.view.MenuItem;
+import android.view.View;
+import android.content.Intent;
+import  android.widget.Button;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -12,7 +22,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class MainActivity extends AppCompatActivity {
+    private Button button;
 
     public static ArrayList<User> userList;
     public static User currentUser;
@@ -50,6 +62,50 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.search);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId())
+                {
+                    case R.id.favorites:
+                        startActivity(new Intent(getApplicationContext(),Favorites.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.search:
+                        return true;
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(),Profile.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+            });
+
+        button = (Button) findViewById(R.id.button3);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openGrapeofWine();
+            }
+        });
+    }
+    public void openGrapeofWine(){
+        Intent intent = new Intent(this, GrapeOfWine.class);
+        startActivity(intent);
+
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                openTypeOfWine();
+            }
+        });
+
         // we create a list of users available throughout the app's fragments
         userList = User.createUsers();
         // we create a currentUser, which will be the one that is logged in
@@ -73,5 +129,26 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     }
+    public void openTypeOfWine(){
+        Intent intent = new Intent(this, TypeOfWine.class);
+        startActivity(intent);
+
+        button = (Button) findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCountryOfWine();
+            }
+        });
+    }
+
+    public void openCountryOfWine(){
+        Intent intent = new Intent(this, CountryOfWine.class);
+        startActivity(intent);
+
+    }
+
 }
+
