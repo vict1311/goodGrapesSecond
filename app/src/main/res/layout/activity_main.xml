@@ -11,9 +11,6 @@
     <TextView
 
         android:id="@+id/textView"
-
-        android:id="@+id/text"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -109,7 +106,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-
+    <Button
+        android:id="@+id/viewAllWine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View all wines!"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
