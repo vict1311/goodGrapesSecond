@@ -63,7 +63,22 @@ public class wineDisplay extends AppCompatActivity {
             }
         });
 
+        final TextView textViewToChange = (TextView) findViewById(R.id.nameVAR);
+        textViewToChange.setText(
+                "" + MainActivity.wineList.get(1).name);
 
+        // we use year as a placeholder for country :)
+        final TextView textViewToChange = (TextView) findViewById(R.id.countryVAR);
+        textViewToChange.setText(
+                "Country: " + MainActivity.wineList.get(1).year);
+
+        final TextView textViewToChange = (TextView) findViewById(R.id.grapeVAR);
+        textViewToChange.setText(
+                "Grape: " + MainActivity.wineList.get(1).grape);
+
+        final TextView textViewToChange = (TextView) findViewById(R.id.typeVAR);
+        textViewToChange.setText(
+                "Grape: " + MainActivity.wineList.get(1).type);
 
     }
 }
