@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class UserLibrary {
     /**
      * ID of a specific Library
+     * this page corresponds to what we call favorites as the user wanting it to be named that
      */
     public int userIDLib;
     /**
