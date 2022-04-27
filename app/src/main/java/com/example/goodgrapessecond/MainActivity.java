@@ -111,6 +111,15 @@ public class MainActivity extends AppCompatActivity {
                 openCountryOfWine();
             }
         });
+
+        //button to wineDisplay
+        button = (Button) findViewById(R.id.emmelie);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openWineDisplay();
+            }
+        });
     }
 
     public void openAllWines() {
@@ -135,6 +144,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CountryOfWine.class);
         startActivity(intent);
 
+    }
+
+    public void openWineDisplay() {
+        Intent intent = new Intent(this, wineDisplay.class);
+        startActivity(intent);
     }
 
 

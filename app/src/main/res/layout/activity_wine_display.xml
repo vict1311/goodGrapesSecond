@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".wineDisplay">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/purple_200"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menu_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="149dp"
+        android:layout_height="169dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342"
+        app:srcCompat="@drawable/ic_baseline_wine_bar_24" />
+
+    <TextView
+        android:id="@+id/nameVAR"
+        android:layout_width="171dp"
+        android:layout_height="86dp"
+        android:text="Name VAR"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/countryVAR"
+        android:layout_width="107dp"
+        android:layout_height="38dp"
+        android:text="Country VAR"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.605"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameVAR"
+        app:layout_constraintVertical_bias="0.099" />
+
+    <TextView
+        android:id="@+id/grapeVAR"
+        android:layout_width="124dp"
+        android:layout_height="38dp"
+        android:text="Grape VAR"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countryVAR"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <TextView
+        android:id="@+id/typeVAR"
+        android:layout_width="121dp"
+        android:layout_height="44dp"
+        android:text="Type VAR"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.634"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grapeVAR"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <TextView
+        android:id="@+id/ratingVAR"
+        android:layout_width="121dp"
+        android:layout_height="44dp"
+        android:text="Rating VAR"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.634"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/typeVAR"
+        app:layout_constraintVertical_bias="0.102" />
+
+    <Button
+        android:id="@+id/addRemove"
+        android:onClick="onActionClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add to Favorites"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingVAR"
+        app:layout_constraintVertical_bias="0.488" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
