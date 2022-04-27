@@ -36,6 +36,8 @@
         android:layout_width="171dp"
         android:layout_height="86dp"
         android:text="Name VAR"
+        android:textAlignment="center"
+        android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,9 +93,10 @@
 
     <Button
         android:id="@+id/addRemove"
+        android:onClick="onActionClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add/remove"
+        android:text="Add to Favorites"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

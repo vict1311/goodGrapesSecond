@@ -62,23 +62,42 @@ public class wineDisplay extends AppCompatActivity {
                 return false;
             }
         });
+/* prøver at få knappen til at virke :(
+        button = (Button) findViewById(R.id.addRemove);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                open();
+            }
+        });
+        */
 
-        final TextView textViewToChange = (TextView) findViewById(R.id.nameVAR);
-        textViewToChange.setText(
+
+
+
+        final TextView textViewToChangeName = (TextView) findViewById(R.id.nameVAR);
+        textViewToChangeName.setText(
                 "" + MainActivity.wineList.get(1).name);
 
         // we use year as a placeholder for country :)
-        final TextView textViewToChange = (TextView) findViewById(R.id.countryVAR);
-        textViewToChange.setText(
+        final TextView textViewToChangeCountry = (TextView) findViewById(R.id.countryVAR);
+        textViewToChangeCountry.setText(
                 "Country: " + MainActivity.wineList.get(1).year);
 
-        final TextView textViewToChange = (TextView) findViewById(R.id.grapeVAR);
-        textViewToChange.setText(
+        final TextView textViewToChangeGrape = (TextView) findViewById(R.id.grapeVAR);
+        textViewToChangeGrape.setText(
                 "Grape: " + MainActivity.wineList.get(1).grape);
 
-        final TextView textViewToChange = (TextView) findViewById(R.id.typeVAR);
-        textViewToChange.setText(
+        final TextView textViewToChangeType = (TextView) findViewById(R.id.typeVAR);
+        textViewToChangeType.setText(
                 "Grape: " + MainActivity.wineList.get(1).type);
+
+        /*final TextView textViewToChangeRating = (TextView) findViewById(R.id.ratingVAR);
+        textViewToChangeRating.setText(
+                "Rating: ");
+                */
+
+
 
     }
 }
