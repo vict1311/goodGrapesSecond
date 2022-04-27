@@ -3,22 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Victor/Documents/GitHub/goodGrapesSecond/app/src/main/res/drawable/ic_baseline_tag_faces_24.xml" value="0.1565" />
+        <entry key="..\:/Users/Victor/Documents/GitHub/goodGrapesSecond/app/src/main/res/drawable/ic_launcher_profile1_background.xml" value="0.1565" />
         <entry key="..\:/Users/Victor/Documents/GitHub/goodGrapesSecond/app/src/main/res/drawable/selector.xml" value="0.1565" />
+        <entry key="..\:/Users/Victor/Documents/GitHub/goodGrapesSecond/app/src/main/res/drawable/wineBottle_background.xml" value="0.1565" />
         <entry key="..\:/Users/Victor/Documents/GitHub/goodGrapesSecond/app/src/main/res/layout/activity_all_wines.xml" value="0.1" />
         <entry key="..\:/Users/Victor/Documents/GitHub/goodGrapesSecond/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Victor/Documents/GitHub/goodGrapesSecond/app/src/main/res/mipmap-anydpi-v26/wine_bottle.xml" value="0.1565" />
+        <entry key="..\:/Users/Victor/Documents/GitHub/goodGrapesSecond/app/src/main/res/mipmap-anydpi-v26/wine_bottle_round.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/background.xml" value="0.226" />
         <entry key="app/src/main/res/drawable/background2.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2095" />
         <entry key="app/src/main/res/drawable/ic_launcher_profile1_background.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/selector.xml" value="0.226" />
-        <entry key="app/src/main/res/layout/activity_all_wines.xml" value="0.2777777777777778" />
+
+        <entry key="app/src/main/res/layout/activity_all_wines.xml" value="0.2884963768115942" />
         <entry key="app/src/main/res/layout/activity_country_of_wine.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_favorites.xml" value="0.30625" />
         <entry key="app/src/main/res/layout/activity_grape_of_wine.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_type_of_wine.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_user_favorites.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_user_library.xml" value="0.24292144775390626" />
         <entry key="app/src/main/res/layout/activity_wine_display.xml" value="0.32090301513671876" />
         <entry key="app/src/main/res/layout/border.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/menu/menu_navigation.xml" value="0.30625" />

@@ -7,7 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,11 +31,18 @@ public class AllWines extends AppCompatActivity {
      */
     public void browseAllWines(LinearLayout linearLayout) {
         for (int i = 0; i < MainActivity.wineList.size(); i++) {
+
             TextView newText = new TextView(this);
             newText.setText("Name:" + MainActivity.wineList.get(i).name + "\r\n" + "Type: " + MainActivity.wineList.get(i).type
                     + "\r\n" + "Grape: " + MainActivity.wineList.get(i).grape + "\r\n" + "Year: " + String.valueOf(MainActivity.wineList.get(i).year) + "\r\n");
             newText.setId(i);
+            //we set a Drawable to appear to the left of the newText TextView
+            newText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.wine_bottle_foreground,0);
+            //add padding to newText with some pixels on top and bottom
+            newText.setPadding(0, 35, 0, 35);
+
             linearLayout.addView(newText);
+
 
             // this should open the Wine Display interface component, and send the id to that component so when we press add to library the id can be added
             newText.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +86,7 @@ public class AllWines extends AppCompatActivity {
         });
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linLayoutAllWine);
+
 
         browseAllWines(linearLayout);
     }

@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         currentLibrary = userLibList.get(currentUser.userID);
 
         currentLibrary.addWineToLibrary(wineList.get(0));
+        currentLibrary.addWineToLibrary(wineList.get(1));
 //
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.search);
