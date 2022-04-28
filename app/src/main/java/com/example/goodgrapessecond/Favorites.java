@@ -25,6 +25,11 @@ public class Favorites extends AppCompatActivity {
                 newText.setText("Name:" + MainActivity.wineList.get(i).name + "\r\n" + "Type: " + MainActivity.wineList.get(i).type
                         + "\r\n" + "Grape: " + MainActivity.wineList.get(i).grape + "\r\n" + "Year: " + String.valueOf(MainActivity.wineList.get(i).year) + "\r\n");
                 newText.setId(i);
+
+                newText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.wine_bottle_foreground,0);
+                //add padding to newText with some pixels on top and bottom
+                newText.setPadding(0, 35, 0, 35);
+
                 linearLayout.addView(newText);
 
 
