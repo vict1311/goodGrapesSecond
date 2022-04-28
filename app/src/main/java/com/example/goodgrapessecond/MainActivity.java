@@ -66,8 +66,17 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextSubmit(String query) {
-                System.out.println(query);
-                return true;
+
+                for (int i = 0; i < wineList.size(); i++) {
+                    if (wineList.get(i).name == query) {
+                        String tempWineID = wineList.get(i).wineID;
+                        Intent intent = new Intent(MainActivity.this, SearchAllWines.class);
+                        intent.putExtra("search_key", tempWineID);
+                        startActivity(intent);
+                        return true;
+                    }
+                }
+                return false;
 
                 // we starter her en ny activity, som får en String, som er vores query
                 // her fra skal vi køre noget lignende i vores browseAllWine
@@ -77,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String query) {
+                System.out.println(query);
                 return true;
             }
         });

@@ -10,12 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoodGrapesSecond">
         <activity
+            android:name=".SearchAllWines"
+            android:exported="false" />
+        <activity
             android:name=".wineDisplay"
             android:exported="false" />
         <activity
             android:name=".AllWines"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".Profile"
             android:exported="false" />
