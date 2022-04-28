@@ -7,6 +7,7 @@
     tools:context=".AllWines"
     android:background="@color/white">
 
+
   <TextView
       android:id="@+id/textViewAllWine"
       android:layout_width="412dp"

@@ -18,7 +18,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class AllWines extends AppCompatActivity {
+// we use this activity to create our search function  - it is identical to AllWines except it filters the wines printed by name!
+public class SearchAllWines extends AppCompatActivity {
 
 
     private Button button;
@@ -53,15 +54,15 @@ public class AllWines extends AppCompatActivity {
 
             // this should open the Wine Display interface component, and send the id to that component so when we press add to library the id can be added
             newText.setOnClickListener(new View.OnClickListener() {
-                       public void onClick(View v) {
+                   public void onClick(View v) {
 
-                           Intent i = new Intent(AllWines.this, wineDisplay.class);
-                           // put the value of wineToDisplay into the variable currentWine
-                           MainActivity.currentWine = Wine.findWine(wineIDToDisplay);
-                           //start the activity i, which is the wineDisplay activity
-                           startActivity(i);
-                           }
-                       }
+                       Intent i = new Intent(SearchAllWines.this, wineDisplay.class);
+                       // put the value of wineToDisplay into the variable currentWine
+                       MainActivity.currentWine = Wine.findWine(wineIDToDisplay);
+                       //start the activity i, which is the wineDisplay activity
+                       startActivity(i);
+                   }
+               }
             );
         }
     }
@@ -69,7 +70,7 @@ public class AllWines extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_wines);
+        setContentView(R.layout.activity_search_all_wines);
 
         //setup navBar
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
