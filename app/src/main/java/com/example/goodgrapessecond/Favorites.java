@@ -24,16 +24,29 @@ public class Favorites extends AppCompatActivity {
                 TextView newText = new TextView(this);
                 newText.setText("Name:" + MainActivity.wineList.get(i).name + "\r\n" + "Type: " + MainActivity.wineList.get(i).type
                         + "\r\n" + "Grape: " + MainActivity.wineList.get(i).grape + "\r\n" + "Year: " + String.valueOf(MainActivity.wineList.get(i).year) + "\r\n");
-                newText.setId(i);
+                // set the id of the textView to be the ID of the wine
+                // this way the id of the textView can be used to find the wine, even if the wines
+                // are not in sequential order
+                newText.setId(Integer.parseInt(MainActivity.wineList.get(i).wineID));
+                int tempID = newText.getId();
+                String wineIDToDisplay = MainActivity.wineList.get(tempID).wineID;
+
                 linearLayout.addView(newText);
 
 
                 // this should open the Wine Display interface component, and send the id to that component so when we press add to library the id can be added
                 newText.setOnClickListener(new View.OnClickListener() {
                                                public void onClick(View v) {
-                                                   newText.setBackgroundColor(getResources().getColor(R.color.teal_700));
-                                               }
-                                           }
+                    // we start a new intent
+                   Intent i = new Intent(Favorites.this, wineDisplay.class);
+                   // put the value of wineToDisplay into the global variable currentWine
+                   MainActivity.currentWine = Wine.findWine(wineIDToDisplay);
+                   //start the activity i, which is the wineDisplay activity, but we have now put something into currentWine
+                   startActivity(i);
+                   // everytime we click set currentWine to the result of finding the wine with the wineIDToDisplay
+
+               }
+                }
                 );
             }
             }

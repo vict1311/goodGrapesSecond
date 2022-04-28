@@ -17,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<Wine> wineList;
     public static ArrayList<UserLibrary> userLibList;
     public static UserLibrary currentLibrary;
+    public static Wine currentWine;
 
 
     @Override
@@ -52,9 +54,34 @@ public class MainActivity extends AppCompatActivity {
 
         currentLibrary.addWineToLibrary(wineList.get(0));
         currentLibrary.addWineToLibrary(wineList.get(1));
+        // set the currentWine to be null - every time we pick a wine in either allWines or the library
+        // we change this, so that we have access to the wine currently being checked out
+        currentWine = null;
 //
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.search);
+        // our search view!
+        SearchView searchView = (SearchView) findViewById(R.id.search);
+        // set an event listener for the text you type in the SearchView
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                System.out.println(query);
+                return true;
+
+                // we starter her en ny activity, som får en String, som er vores query
+                // her fra skal vi køre noget lignende i vores browseAllWine
+                // men i stedet som searchAllWine, som tjekker for, om den string, du har skrevet ind
+                // er lig med name på vores wines
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                return true;
+            }
+        });
+
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

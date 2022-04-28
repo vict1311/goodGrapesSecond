@@ -15,31 +15,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class wineDisplay extends AppCompatActivity {
 
-    public void browseAllWines(LinearLayout linearLayout) {
-        for (int i = 0; i < MainActivity.wineList.size(); i++) {
-            TextView newText = new TextView(this);
-            newText.setText("Name:" + MainActivity.wineList.get(i).name + "\r\n" + "Type: " + MainActivity.wineList.get(i).type
-                    + "\r\n" + "Grape: " + MainActivity.wineList.get(i).grape + "\r\n" + "Year: " + String.valueOf(MainActivity.wineList.get(i).year) + "\r\n");
-            newText.setId(i);
-            linearLayout.addView(newText);
-
-            // this should open the Wine Display interface component, and send the id to that component so when we press add to library the id can be added
-            newText.setOnClickListener(new View.OnClickListener() {
-                                           public void onClick(View v) {
-                                               newText.setBackgroundColor(getResources().getColor(R.color.teal_700));
-                                           }
-                                       }
-            );
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wine_display);
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.search);
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -55,42 +37,34 @@ public class wineDisplay extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(),Profile.class));
+                        startActivity(new Intent(wineDisplay.this,Profile.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
             }
         });
-/* prøver at få knappen til at virke :(
-        button = (Button) findViewById(R.id.addRemove);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                open();
-            }
-        });
-        */
 
 
+        // set the wineToShow to be the one stored in currentWine
+        Wine wineToShow = MainActivity.currentWine;
 
-
-        final TextView textViewToChangeName = (TextView) findViewById(R.id.nameVAR);
+        TextView textViewToChangeName = (TextView) findViewById(R.id.nameVAR);
         textViewToChangeName.setText(
-                "" + MainActivity.wineList.get(1).name);
+                "" + wineToShow.name);
 
         // we use year as a placeholder for country :)
-        final TextView textViewToChangeCountry = (TextView) findViewById(R.id.countryVAR);
+        TextView textViewToChangeCountry = (TextView) findViewById(R.id.countryVAR);
         textViewToChangeCountry.setText(
-                "Country: " + MainActivity.wineList.get(1).year);
+                "Country: " + wineToShow.year);
 
-        final TextView textViewToChangeGrape = (TextView) findViewById(R.id.grapeVAR);
+        TextView textViewToChangeGrape = (TextView) findViewById(R.id.grapeVAR);
         textViewToChangeGrape.setText(
-                "Grape: " + MainActivity.wineList.get(1).grape);
+                "Grape: " + wineToShow.grape);
 
-        final TextView textViewToChangeType = (TextView) findViewById(R.id.typeVAR);
+        TextView textViewToChangeType = (TextView) findViewById(R.id.typeVAR);
         textViewToChangeType.setText(
-                "Grape: " + MainActivity.wineList.get(1).type);
+                "Grape: " + wineToShow.type);
 
         /*final TextView textViewToChangeRating = (TextView) findViewById(R.id.ratingVAR);
         textViewToChangeRating.setText(

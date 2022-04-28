@@ -14,7 +14,8 @@
             android:exported="false" />
         <activity
             android:name=".AllWines"
-            android:exported="false" />
+            android:exported="false"/>
+
         <activity
             android:name=".Profile"
             android:exported="false" />

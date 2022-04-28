@@ -23,6 +23,8 @@ public class AllWines extends AppCompatActivity {
 
     private Button button;
 
+    private LinearLayout linearLayout;
+
 
     /** go through all wines like for Wine Collection interface component
      * create a new TextView for every iteration and set the text here to the name and ID to be the id of i
@@ -35,7 +37,12 @@ public class AllWines extends AppCompatActivity {
             TextView newText = new TextView(this);
             newText.setText("Name:" + MainActivity.wineList.get(i).name + "\r\n" + "Type: " + MainActivity.wineList.get(i).type
                     + "\r\n" + "Grape: " + MainActivity.wineList.get(i).grape + "\r\n" + "Year: " + String.valueOf(MainActivity.wineList.get(i).year) + "\r\n");
-            newText.setId(i);
+            // set the id of the textView to be the ID of the wine
+            // this way the id of the textView can be used to find the wine, even if the wines
+            // are not in sequential order
+            newText.setId(Integer.parseInt(MainActivity.wineList.get(i).wineID));
+            int tempID = newText.getId();
+            String wineIDToDisplay = MainActivity.wineList.get(tempID).wineID;
             //we set a Drawable to appear to the left of the newText TextView
             newText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.wine_bottle_foreground,0);
             //add padding to newText with some pixels on top and bottom
@@ -47,9 +54,14 @@ public class AllWines extends AppCompatActivity {
             // this should open the Wine Display interface component, and send the id to that component so when we press add to library the id can be added
             newText.setOnClickListener(new View.OnClickListener() {
                        public void onClick(View v) {
-                           newText.setBackgroundColor(getResources().getColor(R.color.teal_700));
+
+                           Intent i = new Intent(AllWines.this, wineDisplay.class);
+                           // put the value of wineToDisplay into the variable currentWine
+                           MainActivity.currentWine = Wine.findWine(wineIDToDisplay);
+                           //start the activity i, which is the wineDisplay activity
+                           startActivity(i);
+                           }
                        }
-                   }
             );
         }
     }
@@ -58,10 +70,14 @@ public class AllWines extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_wines);
-        
+
         //setup navBar
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.search);
+
+        // we setup our search!
+        bottomNavigationView.setSelectedItemId(R.id.search);
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -86,7 +102,6 @@ public class AllWines extends AppCompatActivity {
         });
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linLayoutAllWine);
-
 
         browseAllWines(linearLayout);
     }
