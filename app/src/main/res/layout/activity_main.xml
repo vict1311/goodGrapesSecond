@@ -5,23 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#e5d3ea">
+    android:background="@color/white">
 
 
     <TextView
-
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="412dp"
+        android:layout_height="93dp"
+        android:background="@color/lavender"
         android:gravity="center"
-        android:text="Welcome to GoodGrapes!"
-        android:textSize="40sp"
+        android:text="Welcome to GoodGrapes"
+        android:textColor="@color/white"
+        android:textSize="33sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintVertical_bias="0.001"
+        tools:ignore="TextContrastCheck" /><![CDATA[
+
+
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.73" />
+
+
+
+
+
+    ]]>
 
     <TextView
         android:id="@+id/textView4"
@@ -37,12 +50,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326" /><![CDATA[
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
-
-    ]]>
+        app:layout_constraintVertical_bias="0.192" />
 
     <SearchView
         android:layout_width="322dp"
@@ -61,12 +69,13 @@
         android:id="@+id/button"
         android:layout_width="105dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:backgroundTint="#C691D7"
-
+        android:layout_marginTop="248dp"
+        android:backgroundTint="@color/lavender"
         android:text="Type"
+
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -74,11 +83,13 @@
         android:id="@+id/button2"
         android:layout_width="105dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:backgroundTint="#C691D7"
-
+        android:layout_marginTop="248dp"
+        android:backgroundTint="@color/lavender"
         android:text="Country"
+
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,12 +97,13 @@
         android:id="@+id/button3"
         android:layout_width="105dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:backgroundTint="#C691D7"
-
+        android:layout_marginTop="248dp"
+        android:backgroundTint="@color/lavender"
         android:text="Grape"
+
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -100,7 +112,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/purple_200"
+        app:itemBackground="@color/lavender"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_navigation"
@@ -119,22 +131,27 @@
         android:id="@+id/viewAllWine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/lavender"
         android:text="View all wines!"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/emmelie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:backgroundTint="@color/lavender"
         android:text="emmelie tryk på denne knap"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.555" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

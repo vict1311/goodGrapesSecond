@@ -24,12 +24,18 @@ public class Favorites extends AppCompatActivity {
                 TextView newText = new TextView(this);
                 newText.setText("Name:" + MainActivity.wineList.get(i).name + "\r\n" + "Type: " + MainActivity.wineList.get(i).type
                         + "\r\n" + "Grape: " + MainActivity.wineList.get(i).grape + "\r\n" + "Year: " + String.valueOf(MainActivity.wineList.get(i).year) + "\r\n");
+
                 // set the id of the textView to be the ID of the wine
                 // this way the id of the textView can be used to find the wine, even if the wines
                 // are not in sequential order
                 newText.setId(Integer.parseInt(MainActivity.wineList.get(i).wineID));
                 int tempID = newText.getId();
                 String wineIDToDisplay = MainActivity.wineList.get(tempID).wineID;
+
+                newText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.wine_bottle_foreground,0);
+                //add padding to newText with some pixels on top and bottom
+                newText.setPadding(0, 35, 0, 35);
+
 
                 linearLayout.addView(newText);
 

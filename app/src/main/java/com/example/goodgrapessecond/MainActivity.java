@@ -54,10 +54,14 @@ public class MainActivity extends AppCompatActivity {
 
         currentLibrary.addWineToLibrary(wineList.get(0));
         currentLibrary.addWineToLibrary(wineList.get(1));
+
         // set the currentWine to be null - every time we pick a wine in either allWines or the library
         // we change this, so that we have access to the wine currently being checked out
         currentWine = null;
-//
+        currentLibrary.addWineToLibrary(wineList.get(2));
+        currentLibrary.addWineToLibrary(wineList.get(3));
+        currentLibrary.addWineToLibrary(wineList.get(4));
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         // our search view!
         SearchView searchView = (SearchView) findViewById(R.id.search);
