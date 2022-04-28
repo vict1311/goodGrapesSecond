@@ -92,16 +92,30 @@
         app:layout_constraintVertical_bias="0.102" />
 
     <Button
-        android:id="@+id/addRemove"
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You just posted cringe"
+        android:onClick="clickAdd"
+        android:text="Add to Favorites"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingVAR"
+        app:layout_constraintVertical_bias="0.116" />
+
+    <Button
+        android:id="@+id/remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickRemove"
+        android:text="Remove from Favorites"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingVAR"
-        app:layout_constraintVertical_bias="0.488" />
+        app:layout_constraintTop_toBottomOf="@+id/add"
+        app:layout_constraintVertical_bias="0.147" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

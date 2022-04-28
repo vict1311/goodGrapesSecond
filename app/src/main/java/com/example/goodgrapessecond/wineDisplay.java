@@ -2,6 +2,7 @@ package com.example.goodgrapessecond;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.view.View.OnClickListener;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -38,41 +40,29 @@ public class wineDisplay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wine_display);
 
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.search);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.favorites:
-                        startActivity(new Intent(getApplicationContext(),Favorites.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), Favorites.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.search:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(),Profile.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
+                        overridePendingTransition(0, 0);
                         return true;
                 }
                 return false;
             }
         });
-/* prøver at få knappen til at virke :(
-        button = (Button) findViewById(R.id.addRemove);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                open();
-            }
-        });
-        */
-
-
 
 
         final TextView textViewToChangeName = (TextView) findViewById(R.id.nameVAR);
@@ -97,12 +87,26 @@ public class wineDisplay extends AppCompatActivity {
                 "Rating: ");
                 */
 
-        Button button = (Button)findViewById(R.id.addRemove);
-        if (MainActivity.wineList.get(0).libSaved = false) {
-            button.setText("Add to Favorites");
-            MainActivity.wineList.get(0).libSaved = true; }
-        else if (MainActivity.wineList.get(0).libSaved = true) {
-            button.setText("Remove from Favorites");
-            MainActivity.wineList.get(0).libSaved = false; }
     }
+
+    Button buttonAdd = (Button) findViewById(R.id.add);
+    public void clickAdd()
+        if (MainActivity.wineList.get(1).libSaved == false) {
+            MainActivity.wineList.get(1).libSaved = true;
+    }
+
+
+        //Button button = (Button)findViewById(R.id.addRemove);
+        //button.setOnClickListener(new OnClickListener();
+        //public void addRemove()
+            //button.setText("Add to Favorites");
+        //if (MainActivity.wineList.get(0).libSaved == false) {
+            //button.setText("Add to Favorites");
+            //MainActivity.wineList.get(0).libSaved = true; }
+        //else if (MainActivity.wineList.get(0).libSaved == true) {
+            //button.setText("Remove from Favorites");
+            //MainActivity.wineList.get(0).libSaved = false; }
+
+
 }
+
