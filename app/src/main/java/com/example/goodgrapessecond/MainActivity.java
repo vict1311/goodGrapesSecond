@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
 
         currentLibrary.addWineToLibrary(wineList.get(0));
         currentLibrary.addWineToLibrary(wineList.get(1));
+        currentLibrary.addWineToLibrary(wineList.get(2));
+        currentLibrary.addWineToLibrary(wineList.get(3));
+        currentLibrary.addWineToLibrary(wineList.get(4));
 //
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.search);
