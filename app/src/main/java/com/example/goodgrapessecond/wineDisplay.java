@@ -98,11 +98,11 @@ public class wineDisplay extends AppCompatActivity {
                 */
 
         Button button = (Button)findViewById(R.id.addRemove);
-        if (MainActivity.wineList.get(1).libSaved = true)
+        if (MainActivity.wineList.get(0).libSaved = false) {
             button.setText("Add to Favorites");
-        else if (MainActivity.wineList.get(1).libSaved = false)
+            MainActivity.wineList.get(0).libSaved = true; }
+        else if (MainActivity.wineList.get(0).libSaved = true) {
             button.setText("Remove from Favorites");
-
-
+            MainActivity.wineList.get(0).libSaved = false; }
     }
 }
