@@ -48,10 +48,11 @@ public class MainActivity extends AppCompatActivity {
         // we set up the libraries for our userList
         userLibList = User.createLibraries(userList);
         // we get the userLibrary for our current user
-        currentLibrary = userLibList.get(currentUser.userID);
+        currentLibrary = userLibList.get(currentUser.userID); //f9ec14
         currentLibrary.addWineToLibrary(wineList.get(0));
 
         //productInformation = ProductInformation.createProductInformation();
+        //System.out.println(productInformation.get(2).producerName);
 //
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.search);

@@ -26,6 +26,17 @@ public class ProductInformation {
         this.producerName = producerName;
     }
 
+    /**
+     * Method to find the relevant ProductInformation object
+     * @param wineInfo is an object of wine we can use to check for the information
+     * Loop through an ArrayList of ProductInformation objects and check if the product ID is the same as the input wineInfo ID
+     * set the wineIDProduct of the tempProductInformation object to be the same ID as the wineInfo
+     * @return the ProductInformation object that has the same wineID as the input
+     * This method is part of the function component Information Retrieval where it has access to the Wine model component (by way of wineInfo)
+     * This method is somewhat flexible as we don't have a predetermined size of the ArrayList to loop through (just as TraceabilityInformation)
+     * It also provides flexibility as it does not care about the built-in Productinformation objects, so long as they exist (just as TraceabilityInformation)
+     * As such we don't need to change anything here, even if there are changes to the ProductInformation data provided by LWIN
+     */
     public static ProductInformation determineProductInformation(Wine wineInfo) {
         ArrayList<ProductInformation> productInformationArrayList = createProductInformation();
         for (int i = 0; i < productInformationArrayList.size(); i++) {
@@ -37,6 +48,15 @@ public class ProductInformation {
         return null;
     }
 
+    /**
+     * Method to create individual ProductInformation objects from LWINs databases values (hardcoded)
+     * @return ArrayList of ProductInformation objects that we can loop through
+     * We create an ArrayList of ProductInformation objects and add the relevant objects to this ArrayList
+     * This method is separate since we should be able to run it using dynamic data retrieved from other data sources (Like TraceabilityInformation)
+     * We thus create the info dynamically, so it will be update together with an external's database's changes (Like TraceabilityInformation)
+     * This method is part of the Product Information Database component which should be outside the system (Like TraceabilityInformation)
+     * However as we want to first create a static implementation we hardcode these data - as thus it is conceptually part of the Product Information Database component (Like TraceabilityInformation)
+     */
     public static ArrayList<ProductInformation> createProductInformation() {
         ArrayList<ProductInformation> productInformationList = new ArrayList<ProductInformation>();
         ProductInformation hugel = new ProductInformation("0", "France", "Alsace", "Altenberg de Bergheim", "Hugel");
@@ -45,8 +65,6 @@ public class ProductInformation {
         productInformationList.add(brownBrothers);
         ProductInformation trapet = new ProductInformation("2", "France", "Alsace", "Sonnenglanz", "Trapet");
         productInformationList.add(trapet);
-
-        System.out.print(productInformationList);
 
         return productInformationList;
     }
