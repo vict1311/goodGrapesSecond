@@ -39,7 +39,10 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<Wine> wineList;
     public static ArrayList<UserLibrary> userLibList;
     public static UserLibrary currentLibrary;
+
+    public static ArrayList<ProductInformation> productInformation;
     public static Wine currentWine;
+
 
 
     @Override
@@ -62,7 +65,12 @@ public class MainActivity extends AppCompatActivity {
         // we set up the libraries for our userList
         userLibList = User.createLibraries(userList);
         // we get the userLibrary for our current user
-        currentLibrary = userLibList.get(currentUser.userID);
+
+        currentLibrary = userLibList.get(currentUser.userID); //f9ec14
+        currentLibrary.addWineToLibrary(wineList.get(0));
+
+        //productInformation = ProductInformation.createProductInformation();
+        //System.out.println(productInformation.get(2).producerName);
 
         //currentLibrary.addWineToLibrary(wineList.get(0));
         //currentLibrary.addWineToLibrary(wineList.get(1));
@@ -72,8 +80,9 @@ public class MainActivity extends AppCompatActivity {
         //currentLibrary.addWineToLibrary(wineList.get(3));
         // currentLibrary.addWineToLibrary(wineList.get(4));
 
-        // start the SearchStart activity
+
         startActivity(new Intent(MainActivity.this, SearchStart.class));
+
 
 
     }
