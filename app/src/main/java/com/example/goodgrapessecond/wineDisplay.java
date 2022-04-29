@@ -21,14 +21,15 @@ public class wineDisplay extends AppCompatActivity {
         // loop through all wines and if the wines ID is equal to the ID of currentWine then set currentWine
         // to be equal to tempWine. We do this because we don't want a new object that is identical
         // but instead want direct access to the wine in wineList
-        for (int i = 0; i < MainActivity.wineList.size(); i++) {
-            Wine tempWine = MainActivity.wineList.get(i);
-            if (tempWine.wineID.equals(MainActivity.currentWine.wineID)) {
-                MainActivity.currentWine = tempWine;
-            }
-        }
+        //for (int i = 0; i < MainActivity.wineList.size(); i++) {
+         //   Wine tempWine = MainActivity.wineList.get(i);
+        //    if (tempWine.wineID.equals(MainActivity.currentWine.wineID)) {
+       //         MainActivity.currentWine = tempWine;
+       //     }
+       // }
+        //Wine.findWine(MainActivity.currentWine.wineID);
         // set the wineToShow to be the one stored in currentWine
-        Wine wineToShow = MainActivity.currentWine;
+        Wine wineToShow = Wine.findWine(MainActivity.currentWine.wineID);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wine_display);
