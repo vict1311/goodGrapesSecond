@@ -18,6 +18,8 @@ public class Favorites extends AppCompatActivity {
     public void browseFavorites(LinearLayout linearLayout) {
         for (int i = 0; i < MainActivity.wineList.size(); i++) {
             if (MainActivity.wineList.get(i).libSaved == true) {
+      //if the wine in winelist is saved in library then its true and it will print the exact amount of textview to display the wines
+  
                 TextView newText = new TextView(this);
                 newText.setText("Name:" + MainActivity.wineList.get(i).name + "\r\n" + "Type: " + MainActivity.wineList.get(i).type
                         + "\r\n" + "Grape: " + MainActivity.wineList.get(i).grape + "\r\n" + "Year: " + String.valueOf(MainActivity.wineList.get(i).year) + "\r\n");
