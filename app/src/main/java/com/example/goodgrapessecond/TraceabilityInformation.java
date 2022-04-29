@@ -15,7 +15,6 @@ public class TraceabilityInformation {
     public double transportImpact;
     public double retailImpact;
 
-
     /**
      * Constructor for TraceabilityInformation objects
      * @param wineType is a String corresponding to the type of wine (e.g. red)
@@ -82,5 +81,4 @@ public class TraceabilityInformation {
 
         return traceabilityInformationList;
     }
-
 }

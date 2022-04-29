@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<Wine> wineList;
     public static ArrayList<UserLibrary> userLibList;
     public static UserLibrary currentLibrary;
-
+    public static ArrayList<ProductInformation> productInformation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +49,9 @@ public class MainActivity extends AppCompatActivity {
         userLibList = User.createLibraries(userList);
         // we get the userLibrary for our current user
         currentLibrary = userLibList.get(currentUser.userID);
-
         currentLibrary.addWineToLibrary(wineList.get(0));
+
+        //productInformation = ProductInformation.createProductInformation();
 //
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.search);
@@ -117,8 +118,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
     }
 
-
-
     public void openGrapeofWine(){
         Intent intent = new Intent(this, GrapeOfWine.class);
         startActivity(intent);
@@ -135,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
 
 
     }
