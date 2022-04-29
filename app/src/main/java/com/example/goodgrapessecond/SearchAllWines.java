@@ -90,7 +90,7 @@ public class SearchAllWines extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.search:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(),SearchStart.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.profile:

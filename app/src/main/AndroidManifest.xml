@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoodGrapesSecond">
         <activity
+            android:name=".ReadMore"
+            android:exported="false" />
+        <activity
+            android:name=".SearchStart"
+            android:exported="false" />
+        <activity
             android:name=".SearchAllWines"
             android:exported="false" />
         <activity

@@ -24,6 +24,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+// we use the MainActivity class to instantiate our objects like the current user
+// the wines and such
+// then after doing this we immediately start the SearchStart activity
+// in doing this, we ensure that the user never gets to access MainActivity, thereby the system never overwrites
+// the initial attributes of our public static variables
+
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
@@ -41,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -68,144 +75,16 @@ public class MainActivity extends AppCompatActivity {
         //currentLibrary.addWineToLibrary(wineList.get(0));
         //currentLibrary.addWineToLibrary(wineList.get(1));
 
-        // VERY STRANGE - here libSaved is true, but for the VERY same wine in Favorites it is false
-        // do we not understand static variables properly???
-        System.out.println(wineList.get(0).libSaved);
 
         //currentLibrary.addWineToLibrary(wineList.get(2));
         //currentLibrary.addWineToLibrary(wineList.get(3));
         // currentLibrary.addWineToLibrary(wineList.get(4));
 
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        // our search view!
-        SearchView searchView = (SearchView) findViewById(R.id.search);
-        // set an event listener for the text you type in the SearchView
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-
-                for (int i = 0; i < wineList.size(); i++) {
-                    if (wineList.get(i).name == query) {
-                        String tempWineID = wineList.get(i).wineID;
-                        Intent intent = new Intent(MainActivity.this, SearchAllWines.class);
-                        intent.putExtra("search_key", tempWineID);
-                        startActivity(intent);
-                        return true;
-                    }
-                }
-                return false;
-
-                // we starter her en ny activity, som får en String, som er vores query
-                // her fra skal vi køre noget lignende i vores browseAllWine
-                // men i stedet som searchAllWine, som tjekker for, om den string, du har skrevet ind
-                // er lig med name på vores wines
-            }
-
-            @Override
-            public boolean onQueryTextChange(String query) {
-                System.out.println(query);
-                return true;
-            }
-        });
-
-
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.favorites:
-                        startActivity(new Intent(getApplicationContext(), Favorites.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.search:
-                        return true;
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), Profile.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                }
-                return false;
-            }
-        });
-
-        //button to viewAllWine
-        button = (Button) findViewById(R.id.viewAllWine);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openAllWines();
-            }
-        });
-
-        //button to type of Wine
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                openTypeOfWine();
-            }
-        });
-
-        //button Grape of Wine
-        button = (Button) findViewById(R.id.button3);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openGrapeofWine();
-            }
-        });
-
-        //button country of Wine
-
-        button = (Button) findViewById(R.id.button2);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openCountryOfWine();
-            }
-        });
-
-        //button to wineDisplay
-        button = (Button) findViewById(R.id.emmelie);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openWineDisplay();
-            }
-        });
-    }
-
-    public void openAllWines() {
-            Intent intent = new Intent(this, AllWines.class);
-            startActivity(intent);
-    }
-
-    public void openGrapeofWine(){
-        Intent intent = new Intent(this, GrapeOfWine.class);
-        startActivity(intent);
-
-        //
-    }
-    public void openTypeOfWine(){
-        Intent intent = new Intent(this, TypeOfWine.class);
-        startActivity(intent);
-    }
-
-    public void openCountryOfWine(){
-        Intent intent = new Intent(this, CountryOfWine.class);
-        startActivity(intent);
-
-    }
-
-    public void openWineDisplay() {
-        Intent intent = new Intent(this, wineDisplay.class);
-        startActivity(intent);
-    }
+        startActivity(new Intent(MainActivity.this, SearchStart.class));
 
 
 
     }
+}
 

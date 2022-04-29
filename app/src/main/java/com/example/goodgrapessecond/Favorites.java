@@ -73,10 +73,12 @@ public class Favorites extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.search:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(),SearchStart.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.favorites:
+                        startActivity(new Intent(getApplicationContext(), Favorites.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.profile:
                         startActivity(new Intent(getApplicationContext(),Profile.class));
