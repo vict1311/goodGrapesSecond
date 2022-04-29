@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // set the currentWine to be null - every time we pick a wine in either allWines or the library
-                // we change this, so that we have access to the wine currently being checked out
+        // we change this, so that we have access to the wine currently being checked out
         currentWine = null;
 
         // we create a list of users available throughout the app's fragments
@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
         // we get the userLibrary for our current user
         currentLibrary = userLibList.get(currentUser.userID);
 
-        currentLibrary.addWineToLibrary(wineList.get(0));
-        currentLibrary.addWineToLibrary(wineList.get(1));
+        //currentLibrary.addWineToLibrary(wineList.get(0));
+        //currentLibrary.addWineToLibrary(wineList.get(1));
 
         // VERY STRANGE - here libSaved is true, but for the VERY same wine in Favorites it is false
         // do we not understand static variables properly???

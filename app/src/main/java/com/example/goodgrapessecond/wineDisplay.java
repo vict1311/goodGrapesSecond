@@ -29,7 +29,7 @@ public class wineDisplay extends AppCompatActivity {
        // }
         //Wine.findWine(MainActivity.currentWine.wineID);
         // set the wineToShow to be the one stored in currentWine
-        Wine wineToShow = Wine.findWine(MainActivity.currentWine.wineID);
+        Wine wineToShow = MainActivity.currentWine;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wine_display);
