@@ -64,6 +64,10 @@ public class Wine {
         wineList.add(wine2);
         Wine wine3 = new Wine("2", "Duckhorn", "Merlot", "Red", 2017);
         wineList.add(wine3);
+        Wine wine4 = new Wine("3", "Johan Topf", "Zweigelt", "Rosé", 2021 );
+        wineList.add(wine4);
+        Wine wine5 = new Wine("4", "Tropical Moscato", "Mascato Bianco", "Sparkling", 2021);
+        wineList.add(wine5);
         return wineList;
     }
 
@@ -86,9 +90,9 @@ public class Wine {
      * this is part of the Identify Wine function component which has access to the Wine model component
      */
     public static Wine findWine(String wineID) {
-        ArrayList<Wine> wineListAll = createWines();
-        for (int i = 0; i < wineListAll.size(); i ++) {
-            Wine tempWine = wineListAll.get(i);
+        //ArrayList<Wine> wineListAll = createWines();
+        for (int i = 0; i < MainActivity.wineList.size(); i ++) {
+            Wine tempWine = MainActivity.wineList.get(i);
             if (wineID == tempWine.wineID) {
                 return tempWine;
             }

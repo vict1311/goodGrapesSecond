@@ -72,7 +72,7 @@ public class TraceabilityInformation {
         ArrayList<TraceabilityInformation> traceabilityInformationList = new ArrayList<TraceabilityInformation>();
         TraceabilityInformation redWine = new TraceabilityInformation("Red",0.31, 0.07, 0.40, 0.41, 0.68, 0.01);
         traceabilityInformationList.add(redWine);
-        TraceabilityInformation roseWine = new TraceabilityInformation("Rose",0.31, 0.07, 0.40, 0.41, 0.68, 0.01);
+        TraceabilityInformation roseWine = new TraceabilityInformation("Rosé",0.31, 0.07, 0.40, 0.41, 0.68, 0.01);
         traceabilityInformationList.add(roseWine);
         TraceabilityInformation whiteWine = new TraceabilityInformation("White", 0.31, 0.07, 0.40, 0.41, 0.68, 0.01);
         traceabilityInformationList.add(whiteWine);

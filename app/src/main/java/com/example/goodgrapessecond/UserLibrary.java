@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class UserLibrary {
     /**
      * ID of a specific Library
+     * this page corresponds to what we call favorites as the user wanting it to be named that
      */
     public int userIDLib;
     /**
@@ -52,8 +53,13 @@ public class UserLibrary {
      * this method is to be added to the UserLibrary component in our component design
      */
     public void addWineToLibrary(Wine wine) {
-        wine.libSaved = true;
-        this.winesInLib.add(wine.wineID);
+        for (int i = 0; i < MainActivity.wineList.size(); i++) {
+            Wine tempWine = MainActivity.wineList.get(i);
+            if (tempWine.wineID.equals(wine.wineID)) {
+                tempWine.libSaved = true;
+                this.winesInLib.add(wine.wineID);
+            }
+        }
     }
 
     /**
@@ -66,8 +72,13 @@ public class UserLibrary {
      * this method is to be added to the UserLibrary component in our component design
      */
     public void removeWineFromLibrary(Wine wine) {
-        wine.libSaved = false;
-        this.winesInLib.remove(wine.wineID);
+        for (int i = 0; i < MainActivity.wineList.size(); i++) {
+            Wine tempWine = MainActivity.wineList.get(i);
+            if (tempWine.wineID.equals(wine.wineID)) {
+                tempWine.libSaved = false;
+                this.winesInLib.remove(wine.wineID);
+            }
+        }
     }
 
 }
