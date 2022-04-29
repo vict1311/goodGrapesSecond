@@ -114,4 +114,20 @@ public class Wine {
         TraceabilityInformation newTraceability = TraceabilityInformation.determineTraceabilityInformation(this);
         return newTraceability;
     }
+
+    /**
+     * Method to find the ProductInformation object for a wine
+     * It runs determineProductInformation() with the Wine that is calling that method (using "this" as the keyword)
+     * @return the newProduct object for the Wine
+     * This is part of the function component Information Retrieval which has access to a Wine object (in this case the object calling the method)
+     * Through this Wine object we can run determineProductInformation, which comes from TraceabilityInformation class
+     * This does however mean that it is unclear exactly where the line between the Wine component and the Product Information Database component goes
+     * In this current implementation it seems that the Traceability Information becomes part of the Wine component
+     * But we model it as separate components to future proof
+     */
+
+    public ProductInformation productInformation() {
+        ProductInformation newProduct = ProductInformation.determineProductInformation(this);
+        return newProduct;
+    }
 }
