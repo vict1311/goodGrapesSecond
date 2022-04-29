@@ -38,8 +38,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // set the currentWine to be null - every time we pick a wine in either allWines or the library
+        // we change this, so that we have access to the wine currently being checked out
+        currentWine = null;
 
         // we create a list of users available throughout the app's fragments
         userList = User.createUsers();
@@ -52,15 +59,18 @@ public class MainActivity extends AppCompatActivity {
         // we get the userLibrary for our current user
         currentLibrary = userLibList.get(currentUser.userID);
 
-        currentLibrary.addWineToLibrary(wineList.get(0));
-        currentLibrary.addWineToLibrary(wineList.get(1));
+        //currentLibrary.addWineToLibrary(wineList.get(0));
+        //currentLibrary.addWineToLibrary(wineList.get(1));
 
-        // set the currentWine to be null - every time we pick a wine in either allWines or the library
-        // we change this, so that we have access to the wine currently being checked out
-        currentWine = null;
-        currentLibrary.addWineToLibrary(wineList.get(2));
-        currentLibrary.addWineToLibrary(wineList.get(3));
-        currentLibrary.addWineToLibrary(wineList.get(4));
+        // VERY STRANGE - here libSaved is true, but for the VERY same wine in Favorites it is false
+        // do we not understand static variables properly???
+        System.out.println(wineList.get(0).libSaved);
+
+        //currentLibrary.addWineToLibrary(wineList.get(2));
+        //currentLibrary.addWineToLibrary(wineList.get(3));
+        // currentLibrary.addWineToLibrary(wineList.get(4));
+
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         // our search view!

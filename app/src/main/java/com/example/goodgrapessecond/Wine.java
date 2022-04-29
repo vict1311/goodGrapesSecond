@@ -90,9 +90,9 @@ public class Wine {
      * this is part of the Identify Wine function component which has access to the Wine model component
      */
     public static Wine findWine(String wineID) {
-        ArrayList<Wine> wineListAll = createWines();
-        for (int i = 0; i < wineListAll.size(); i ++) {
-            Wine tempWine = wineListAll.get(i);
+        //ArrayList<Wine> wineListAll = createWines();
+        for (int i = 0; i < MainActivity.wineList.size(); i ++) {
+            Wine tempWine = MainActivity.wineList.get(i);
             if (wineID == tempWine.wineID) {
                 return tempWine;
             }
