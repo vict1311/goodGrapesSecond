@@ -61,7 +61,7 @@ public class ReadMore extends AppCompatActivity {
                 return false;
             }
         });
-
+        // we define this String because it is easier to add the same variable than to write the right thing multiple times
         String impact = " kg CO2-e";
 
 
