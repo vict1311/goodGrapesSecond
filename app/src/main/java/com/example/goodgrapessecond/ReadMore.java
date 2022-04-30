@@ -30,7 +30,9 @@ public class ReadMore extends AppCompatActivity {
         //Wine.findWine(MainActivity.currentWine.wineID);
         // set the wineToShow to be the one stored in currentWine
         Wine wineToShow = MainActivity.currentWine;
+        // determine traceabilityInformation and productInformation objects
         TraceabilityInformation newTrace = TraceabilityInformation.determineTraceabilityInformation(wineToShow);
+        ProductInformation newProduct = ProductInformation.determineProductInformation(wineToShow);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_more);
@@ -60,31 +62,23 @@ public class ReadMore extends AppCompatActivity {
             }
         });
 
+        String impact = " kg CO2-e";
 
 
         TextView textViewToChangeName = (TextView) findViewById(R.id.nameVAR);
         textViewToChangeName.setText(
                 "" + wineToShow.name);
 
-        // we use year as a placeholder for country :)
-        TextView textViewToChangeCountry = (TextView) findViewById(R.id.countryVAR);
-        textViewToChangeCountry.setText(
-                "Agriculture: " + newTrace.agricultureImpact + " kg CO2-e");
+        // set textview for the traceability information and set text to be the traceability information categories
+        TextView traceView = (TextView) findViewById(R.id.textTrace);
+        traceView.setText("Agriculture: " + newTrace.agricultureImpact + impact + "\r\n \r\n ILUC: " + newTrace.ILUCImpact + impact +
+                "\r\n \r\n Processing: " + newTrace.packagingImpact + impact + "\r\n \r\n Packaging: " + newTrace.packagingImpact + impact + "\r\n \r\n Transport: " +
+                newTrace.transportImpact + impact + "\r\n \r\n Retail: " + newTrace.retailImpact + impact);
 
-        TextView textViewToChangeGrape = (TextView) findViewById(R.id.grapeVAR);
-        textViewToChangeGrape.setText(
-                "Grape: " + wineToShow.grape);
-
-        TextView textViewToChangeType = (TextView) findViewById(R.id.typeVAR);
-        textViewToChangeType.setText(
-                "Grape: " + wineToShow.type);
-
-        /*final TextView textViewToChangeRating = (TextView) findViewById(R.id.ratingVAR);
-        textViewToChangeRating.setText(
-                "Rating: ");
-                */
-
-
+        // set textview for the product information
+        TextView productView = (TextView) findViewById(R.id.textProduct);
+        productView.setText("Country: " + newProduct.country + "\r\n\r\nRegion: " + newProduct.region
+        + "\r\n \r\n Sub-region: " + newProduct.subRegion + "\r\n \r\n Producer name: " + newProduct.producerName);
 
         //System.out.println(MainActivity.wineList.get(0).libSaved);
         //System.out.println(wineToShow.libSaved);

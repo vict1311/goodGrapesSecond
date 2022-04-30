@@ -76,6 +76,11 @@ public class TraceabilityInformation {
         traceabilityInformationList.add(roseWine);
         TraceabilityInformation whiteWine = new TraceabilityInformation("White", 0.31, 0.07, 0.40, 0.41, 0.68, 0.01);
         traceabilityInformationList.add(whiteWine);
+        // we run into problems here - LWIN does not see sparkling as separate from the other three categories
+        // this means that we will never see wines that are JUST sparkling, and as such this method
+        // loses some sophistication and flexibility here
+        // we dont get any new information considering the sparkling subtypes of wine
+        // we keep the object here, but that is a sacrifice we make
         TraceabilityInformation sparklingWine = new TraceabilityInformation("Sparkling", 0.31, 0.07, 0.40, 0.41, 0.68, 0.01);
         traceabilityInformationList.add(sparklingWine);
 

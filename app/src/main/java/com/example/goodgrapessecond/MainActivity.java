@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         // we get the userLibrary for our current user
 
         currentLibrary = userLibList.get(currentUser.userID); //f9ec14
-        currentLibrary.addWineToLibrary(wineList.get(0));
+        //currentLibrary.addWineToLibrary(wineList.get(0));
 
         //productInformation = ProductInformation.createProductInformation();
         //System.out.println(productInformation.get(2).producerName);

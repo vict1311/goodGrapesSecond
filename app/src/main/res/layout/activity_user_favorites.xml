@@ -10,13 +10,13 @@
 
     <TextView
         android:id="@+id/textViewAllWine"
-        android:layout_width="412dp"
+        android:layout_width="match_parent"
         android:layout_height="93dp"
         android:background="@color/lavender"
         android:gravity="center"
         android:text="Your favorite wines"
         android:textColor="@color/white"
-        android:textSize="40sp"
+        android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
