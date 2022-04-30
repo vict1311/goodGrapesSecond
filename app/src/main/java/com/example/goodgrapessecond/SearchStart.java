@@ -17,6 +17,7 @@ public class SearchStart extends AppCompatActivity {
 
     private Button button;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,29 +29,19 @@ public class SearchStart extends AppCompatActivity {
         // set an event listener for the text you type in the SearchView
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
+            // on submitting our search query, we create a new Intent to request SearchAllWines
+            // does something from SearchStart. We put the given search query in this intent and start the activity
             @Override
             public boolean onQueryTextSubmit(String query) {
-
-                for (int i = 0; i < MainActivity.wineList.size(); i++) {
-                    if (MainActivity.wineList.get(i).name == query) {
-                        String tempWineID = MainActivity.wineList.get(i).wineID;
-                        Intent intent = new Intent(SearchStart.this, SearchAllWines.class);
-                        intent.putExtra("search_key", tempWineID);
-                        startActivity(intent);
-                        return true;
-                    }
-                }
+                    Intent intent = new Intent(SearchStart.this, SearchAllWines.class);
+                    intent.putExtra("search_key", query);
+                    startActivity(intent);
                 return false;
-
-                // we starter her en ny activity, som får en String, som er vores query
-                // her fra skal vi køre noget lignende i vores browseAllWine
-                // men i stedet som searchAllWine, som tjekker for, om den string, du har skrevet ind
-                // er lig med name på vores wines
             }
 
             @Override
             public boolean onQueryTextChange(String query) {
-                System.out.println(query);
+                //System.out.println(query);
                 return true;
             }
         });
