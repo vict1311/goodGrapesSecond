@@ -53,20 +53,20 @@ public class Wine {
 
     /**
      * createWines() handles creating the different Wines of our system
-     * sources are from Winefamly.com
+     * sources are from LWIN, and the year is the year the wine was added to LWIN
      * @return ArrayList of Wines that is added to for every object created
      */
     public static ArrayList<Wine> createWines(){
         ArrayList<Wine> wineList = new ArrayList<Wine>();
-        Wine wine1 = new Wine("0", "Barramundi", "Pinot Noir", "Red", 2019);
+        Wine wine1 = new Wine("0", "Schieferkopf, Sylvaner", "Sylvaner", "White", 2019);
         wineList.add(wine1);
-        Wine wine2 = new Wine("1", "Stepp", "Riesling", "White", 2020);
+        Wine wine2 = new Wine("1", "Trimbach, Pinot Noir Reserve", "Pinot Noir Reserve", "Red", 2018);
         wineList.add(wine2);
-        Wine wine3 = new Wine("2", "Duckhorn", "Merlot", "Red", 2017);
+        Wine wine3 = new Wine("2", "Alta Vista, Alto, Mendoza", "Alto", "Red", 2011);
         wineList.add(wine3);
-        Wine wine4 = new Wine("3", "Johan Topf", "Zweigelt", "Rosé", 2021 );
+        Wine wine4 = new Wine("3", "Deutz, Rose NV", "Rose NV", "Rosé", 2011 );
         wineList.add(wine4);
-        Wine wine5 = new Wine("4", "Tropical Moscato", "Mascato Bianco", "Sparkling", 2021);
+        Wine wine5 = new Wine("4", "Magpie Estate, Blacksock, Barossa Valley", "Blacksock", "Red", 2014);
         wineList.add(wine5);
         return wineList;
     }

@@ -10,7 +10,7 @@
 
   <TextView
       android:id="@+id/textViewAllWine"
-      android:layout_width="412dp"
+      android:layout_width="match_parent"
       android:layout_height="93dp"
       android:background="@color/lavender"
       android:gravity="center"

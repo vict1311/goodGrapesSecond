@@ -59,12 +59,17 @@ public class ProductInformation {
      */
     public static ArrayList<ProductInformation> createProductInformation() {
         ArrayList<ProductInformation> productInformationList = new ArrayList<ProductInformation>();
-        ProductInformation hugel = new ProductInformation("0", "France", "Alsace", "Altenberg de Bergheim", "Hugel");
-        productInformationList.add(hugel);
-        ProductInformation brownBrothers = new ProductInformation( "1", "Australia", "Victoria", "Wimmera", "Brown Brohters");
-        productInformationList.add(brownBrothers);
-        ProductInformation trapet = new ProductInformation("2", "France", "Alsace", "Sonnenglanz", "Trapet");
-        productInformationList.add(trapet);
+        // the first traceabilityInformation trace1 does not have a sub-region - we use the one right above it in LWIN
+        ProductInformation trace1 = new ProductInformation("0", "France", "Alsace", "Altenberg de Bergheim", "Schieferkopf");
+        productInformationList.add(trace1);
+        ProductInformation trace2 = new ProductInformation( "1", "France", "Alsace", "N/A", "Trimbach");
+        productInformationList.add(trace2);
+        ProductInformation trace3 = new ProductInformation("2", "Argentina", "Mendoza", "N/A", "Alta Vista");
+        productInformationList.add(trace3);
+        ProductInformation trace4 = new ProductInformation( "3", "France", "Champagne", "N/A", "Deutz");
+        productInformationList.add(trace4);
+        ProductInformation trace5 = new ProductInformation("4", "Australia", "South Australia", "Barossa Valley", "Magpie Estate");
+        productInformationList.add(trace5);
 
         return productInformationList;
     }

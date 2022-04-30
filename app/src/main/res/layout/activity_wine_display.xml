@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".wineDisplay">
+    tools:context=".wineDisplay"
+    android:background="@color/white">
 
 
     <Button
@@ -12,15 +13,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/lavender"
-        android:textAllCaps="false"
         android:text="Read more"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingVAR"
-        app:layout_constraintVertical_bias="0.768" />
+        app:layout_constraintTop_toBottomOf="@+id/addRemove"
+        app:layout_constraintVertical_bias="0.197" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -88,7 +89,7 @@
         app:layout_constraintHorizontal_bias="0.641"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/countryVAR"
-        app:layout_constraintVertical_bias="0.033" />
+        app:layout_constraintVertical_bias="0.093" />
 
     <TextView
         android:id="@+id/typeVAR"
@@ -100,7 +101,7 @@
         app:layout_constraintHorizontal_bias="0.634"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/grapeVAR"
-        app:layout_constraintVertical_bias="0.033" />
+        app:layout_constraintVertical_bias="0.118" />
 
     <TextView
         android:id="@+id/ratingVAR"
@@ -112,21 +113,21 @@
         app:layout_constraintHorizontal_bias="0.634"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/typeVAR"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.148" />
 
     <Button
         android:id="@+id/addRemove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/lavender"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingVAR"
-        app:layout_constraintVertical_bias="0.488"
-        android:textAllCaps="false"/>
+        app:layout_constraintVertical_bias="0.101" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
