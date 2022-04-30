@@ -3,6 +3,7 @@ package com.example.goodgrapessecond;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -85,6 +86,11 @@ public class SearchAllWines extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_all_wines);
 
+        //setup our actionbar to make it clickable
+        //ActionBar actionBar = getActionBar();
+        // we set the action bar to be clickable and to have an arrow
+        //actionBar.setDisplayHomeAsUpEnabled(true);
+
         String searchQuery = getIntent().getStringExtra("search_key");
         System.out.println(searchQuery);
 
@@ -131,5 +137,18 @@ public class SearchAllWines extends AppCompatActivity {
             newText.setPadding(0, 35, 0, 35);
             linearLayout.addView(newText);
         }
+
+        // create our back button
+        button = findViewById(R.id.backButton);
+        // set a drawable for the button that is an arrow from the Android Action Bar icon pack
+        button.setCompoundDrawablesWithIntrinsicBounds( R.drawable.ic_ai_back, 0, 0, 0);
+        // onclick listener, which creates a new intent to go back to the SearchStart activity and starts this
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(SearchAllWines.this, SearchStart.class);
+                startActivity(i);
+            }
+        });
+
     }
 }
