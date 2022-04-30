@@ -38,8 +38,10 @@ public class SearchAllWines extends AppCompatActivity {
      */
     public void searchAllWines(LinearLayout linearLayout, String search) throws Exception {
         for (int i = 0; i < MainActivity.wineList.size(); i++) {
-            if (MainActivity.wineList.get(i).name.equals(search)) {
-                // if we find a wine with the correct name make tempWine that wine
+            // check if the current wines name contains the search query (so not is just exactly the search query)
+
+            if (MainActivity.wineList.get(i).name.contains(search)) {
+                // if we find a wine whose name contains the query make tempWine that wine
                 tempWine = MainActivity.wineList.get(i);
                 TextView newText = new TextView(this);
                 newText.setText("Name: " + MainActivity.wineList.get(i).name + "\r\n" + "Type: " + MainActivity.wineList.get(i).type
