@@ -65,18 +65,21 @@ public class wineDisplay extends AppCompatActivity {
         textViewToChangeName.setText(
                 "" + wineToShow.name);
 
-        // we use year as a placeholder for country :)
+
         TextView textViewToChangeCountry = (TextView) findViewById(R.id.countryVAR);
         textViewToChangeCountry.setText(
-                "Country: " + wineToShow.year);
+                "Year: " + wineToShow.year);
+        textViewToChangeCountry.setTextColor(getResources().getColor(R.color.black));
 
         TextView textViewToChangeGrape = (TextView) findViewById(R.id.grapeVAR);
         textViewToChangeGrape.setText(
                 "Grape: " + wineToShow.grape);
+        textViewToChangeGrape.setTextColor(getResources().getColor(R.color.black));
 
         TextView textViewToChangeType = (TextView) findViewById(R.id.typeVAR);
         textViewToChangeType.setText(
-                "Grape: " + wineToShow.type);
+                "Type: " + wineToShow.type);
+        textViewToChangeType.setTextColor(getResources().getColor(R.color.black));
 
         /*final TextView textViewToChangeRating = (TextView) findViewById(R.id.ratingVAR);
         textViewToChangeRating.setText(
@@ -86,6 +89,8 @@ public class wineDisplay extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.addRemove);
         //button to read more
         Button buttonRead = (Button) findViewById(R.id.readMore);
+        // set right of button to be the drawable of a forward arrow
+        buttonRead.setCompoundDrawablesWithIntrinsicBounds( 0, 0,R.drawable.ic_ai_forward, 0);
         // apparently libSaved is always false, like below?? WHY????
         if (wineToShow.libSaved == true) {
             button.setText("Remove from favorites");
