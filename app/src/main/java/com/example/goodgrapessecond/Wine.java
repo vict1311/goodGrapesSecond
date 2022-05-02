@@ -32,6 +32,13 @@ public class Wine {
      */
     public boolean libSaved;
 
+    /**
+     * wineLinked checks for the existence of product and traceability information objects
+     * it is a list of boolean values, where the first is traceability information
+     * and the second is product information
+     */
+    public boolean[] wineLinked = new boolean[2];
+
     /** constructor to create Wine objects
      * @param wineID is a string that is the ID of the wine
      * @param name is a String defining the name
@@ -41,6 +48,7 @@ public class Wine {
      * start by defining a wine as NOT saved by setting libSaved to false
      * libSaved is an attribute dynamically evaluated during runtime and NOT saved in database
      * because we can then change libSaved based on the user who is using the app
+     * set both booleans of wineLinked to be false
      */
     public Wine(String wineID, String name, String grape, String type, int year) {
         this.wineID = wineID;
@@ -49,6 +57,8 @@ public class Wine {
         this.type = type;
         this.year = year;
         libSaved = false;
+        wineLinked[0] = false;
+        wineLinked[1] = false;
     }
 
     /**
@@ -126,7 +136,7 @@ public class Wine {
      * But we model it as separate components to future proof
      */
 
-    public ProductInformation productInformation() {
+    public ProductInformation productRetrieval() {
         ProductInformation newProduct = ProductInformation.determineProductInformation(this);
         return newProduct;
     }

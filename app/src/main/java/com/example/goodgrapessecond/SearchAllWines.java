@@ -40,8 +40,8 @@ public class SearchAllWines extends AppCompatActivity {
     public void searchAllWines(LinearLayout linearLayout, String search) throws Exception {
         for (int i = 0; i < MainActivity.wineList.size(); i++) {
             // check if the current wines name contains the search query (so not is just exactly the search query)
-
-            if (MainActivity.wineList.get(i).name.contains(search)) {
+            // make the wine name and query lowercase
+            if (MainActivity.wineList.get(i).name.toLowerCase().contains(search.toLowerCase())) {
                 // if we find a wine whose name contains the query make tempWine that wine
                 tempWine = MainActivity.wineList.get(i);
                 TextView newText = new TextView(this);
@@ -58,7 +58,7 @@ public class SearchAllWines extends AppCompatActivity {
                 //add padding to newText with some pixels on top and bottom
                 newText.setPadding(0, 35, 0, 35);
                 // set color
-                //newText.setTextColor(Color.parseColor("#FF000000""));
+                newText.setTextColor(getResources().getColor(R.color.black));
 
                 linearLayout.addView(newText);
 
@@ -135,6 +135,7 @@ public class SearchAllWines extends AppCompatActivity {
             TextView newText = new TextView(this);
             newText.setText("We could not find a wine with that name!");
             newText.setPadding(0, 35, 0, 35);
+            newText.setTextColor(getResources().getColor(R.color.black));
             linearLayout.addView(newText);
         }
 

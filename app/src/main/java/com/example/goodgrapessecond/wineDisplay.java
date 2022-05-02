@@ -65,18 +65,21 @@ public class wineDisplay extends AppCompatActivity {
         textViewToChangeName.setText(
                 "" + wineToShow.name);
 
-        // we use year as a placeholder for country :)
+
         TextView textViewToChangeCountry = (TextView) findViewById(R.id.countryVAR);
         textViewToChangeCountry.setText(
-                "Country: " + wineToShow.year);
+                "Year: " + wineToShow.year);
+        textViewToChangeCountry.setTextColor(getResources().getColor(R.color.black));
 
         TextView textViewToChangeGrape = (TextView) findViewById(R.id.grapeVAR);
         textViewToChangeGrape.setText(
                 "Grape: " + wineToShow.grape);
+        textViewToChangeGrape.setTextColor(getResources().getColor(R.color.black));
 
         TextView textViewToChangeType = (TextView) findViewById(R.id.typeVAR);
         textViewToChangeType.setText(
-                "Grape: " + wineToShow.type);
+                "Type: " + wineToShow.type);
+        textViewToChangeType.setTextColor(getResources().getColor(R.color.black));
 
         /*final TextView textViewToChangeRating = (TextView) findViewById(R.id.ratingVAR);
         textViewToChangeRating.setText(

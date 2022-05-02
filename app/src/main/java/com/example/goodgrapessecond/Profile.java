@@ -6,10 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Profile extends AppCompatActivity {
+
+    private LinearLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +35,23 @@ public class Profile extends AppCompatActivity {
                     case R.id.profile:
                         return true;
                     case R.id.search:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(),SearchStart.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
             }
         });
+
+        // create LinearLayout and add textview containing the current user's name
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayoutProfile);
+
+        TextView newText = new TextView(this);
+
+        newText.setText("Name: " + MainActivity.currentUser.name +
+                "\r\n");
+        newText.setTextColor(getResources().getColor(R.color.black));
+
+        linearLayout.addView(newText);
     }
 }

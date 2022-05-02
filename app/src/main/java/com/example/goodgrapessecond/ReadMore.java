@@ -18,6 +18,8 @@ public class ReadMore extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
+
         // loop through all wines and if the wines ID is equal to the ID of currentWine then set currentWine
         // to be equal to tempWine. We do this because we don't want a new object that is identical
         // but instead want direct access to the wine in wineList
@@ -30,11 +32,14 @@ public class ReadMore extends AppCompatActivity {
         //Wine.findWine(MainActivity.currentWine.wineID);
         // set the wineToShow to be the one stored in currentWine
         Wine wineToShow = MainActivity.currentWine;
-        // determine traceabilityInformation and productInformation objects
-        TraceabilityInformation newTrace = TraceabilityInformation.determineTraceabilityInformation(wineToShow);
-        ProductInformation newProduct = ProductInformation.determineProductInformation(wineToShow);
+        // retrieve traceabilityInformation and productInformation objects
+        TraceabilityInformation newTrace = wineToShow.traceabilityRetrieval();
+        ProductInformation newProduct = wineToShow.productRetrieval();
 
         super.onCreate(savedInstanceState);
+        System.out.print(wineToShow.wineLinked[0]);
+        System.out.println(wineToShow.wineLinked[1]);
+
         setContentView(R.layout.activity_read_more);
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
@@ -62,23 +67,27 @@ public class ReadMore extends AppCompatActivity {
             }
         });
         // we define this String because it is easier to add the same variable than to write the right thing multiple times
-        String impact = " kg CO2-e";
+        String impact = " kg CO2-equivalent";
 
 
         TextView textViewToChangeName = (TextView) findViewById(R.id.nameVAR);
         textViewToChangeName.setText(
                 "" + wineToShow.name);
 
+
         // set textview for the traceability information and set text to be the traceability information categories
         TextView traceView = (TextView) findViewById(R.id.textTrace);
-        traceView.setText("Agriculture: " + newTrace.agricultureImpact + impact + "\r\n \r\n ILUC: " + newTrace.ILUCImpact + impact +
-                "\r\n \r\n Processing: " + newTrace.packagingImpact + impact + "\r\n \r\n Packaging: " + newTrace.packagingImpact + impact + "\r\n \r\n Transport: " +
-                newTrace.transportImpact + impact + "\r\n \r\n Retail: " + newTrace.retailImpact + impact);
+        traceView.setText("Agriculture: " + newTrace.agricultureImpact + impact + "\r\n \r\nILUC: " + newTrace.ILUCImpact + impact +
+                "\r\n \r\nProcessing: " + newTrace.packagingImpact + impact + "\r\n \r\nPackaging: " + newTrace.packagingImpact + impact + "\r\n \r\nTransport: " +
+                newTrace.transportImpact + impact + "\r\n \r\nRetail: " + newTrace.retailImpact + impact);
+        traceView.setTextColor(getResources().getColor(R.color.black));
 
         // set textview for the product information
         TextView productView = (TextView) findViewById(R.id.textProduct);
         productView.setText("Country: " + newProduct.country + "\r\n\r\nRegion: " + newProduct.region
-        + "\r\n \r\n Sub-region: " + newProduct.subRegion + "\r\n \r\n Producer name: " + newProduct.producerName);
+        + "\r\n \r\nSub-region: " + newProduct.subRegion + "\r\n \r\nProducer name: " + newProduct.producerName);
+        productView.setTextColor(getResources().getColor(R.color.black));
+
 
         //System.out.println(MainActivity.wineList.get(0).libSaved);
         //System.out.println(wineToShow.libSaved);

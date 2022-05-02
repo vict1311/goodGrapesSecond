@@ -41,6 +41,7 @@ public class TraceabilityInformation {
      * @param wineInput is an object of wine we can use to check for the type
      * Loop through an ArrayList of TraceabilityInformation objects and check if the wine type is the same as the input wineTypeInput
      * set the wineIDTrace of the tempTraceabilityInformation object to be the same ID as the wineInput
+     * set index 0 of wineLinked to be true so we know there is a traceability information object for the wine
      * @return the TraceabilityInformation object that has the same wineType as the input
      * This method is part of the function component Information Retrieval where it has access to the Wine model component (by way of wineInput)
      * This method is somewhat flexible as we don't have a predetermined size of the ArrayList to loop through
@@ -53,6 +54,7 @@ public class TraceabilityInformation {
             TraceabilityInformation tempTraceabilityInformation = traceabilityInformationArrayList.get(i);
             if (tempTraceabilityInformation.wineType == wineInput.type) {
                 tempTraceabilityInformation.wineIDTrace = wineInput.wineID;
+                wineInput.wineLinked[0] = true;
                 return tempTraceabilityInformation;
             }
         }

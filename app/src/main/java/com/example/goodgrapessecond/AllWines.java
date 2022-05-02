@@ -47,6 +47,7 @@ public class AllWines extends AppCompatActivity {
             newText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.wine_bottle_foreground,0);
             //add padding to newText with some pixels on top and bottom
             newText.setPadding(0, 35, 0, 35);
+            newText.setTextColor(getResources().getColor(R.color.black));
 
             linearLayout.addView(newText);
 
