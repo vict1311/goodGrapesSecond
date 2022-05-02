@@ -67,7 +67,11 @@
         tools:ignore="TextContrastCheck"  />
 
 
-    <TextView
+
+
+
+
+    <!--<TextView
         android:id="@+id/countryVAR"
         android:layout_width="107dp"
         android:layout_height="38dp"
@@ -113,7 +117,7 @@
         app:layout_constraintHorizontal_bias="0.634"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/typeVAR"
-        app:layout_constraintVertical_bias="0.148" />
+        app:layout_constraintVertical_bias="0.148" />-->
 
     <Button
         android:id="@+id/addRemove"
@@ -126,8 +130,70 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingVAR"
-        app:layout_constraintVertical_bias="0.101" />
+        app:layout_constraintTop_toBottomOf="@+id/transport"
+        app:layout_constraintVertical_bias="0.633" />
+
+    <TextView
+        android:id="@+id/transport"
+        android:layout_width="155dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginBottom="8dp"
+        android:text="100%"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/transporttext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/agriculture"
+        android:layout_width="155dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="344dp"
+        android:layout_marginBottom="8dp"
+        android:text="100%"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/agriculturetext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/transporttext"
+        android:layout_width="185dp"
+        android:layout_height="70dp"
+        android:text="This wine uses 10% more during transport than the average wine"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/agriculture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.827" />
+
+    <TextView
+        android:id="@+id/agriculturetext"
+        android:layout_width="185dp"
+        android:layout_height="70dp"
+        android:text="This wine uses 10% more during farming than the average wine"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.665" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

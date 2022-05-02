@@ -11,7 +11,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.text.DecimalFormat;
 
 public class wineDisplay extends AppCompatActivity {
 
@@ -30,6 +34,17 @@ public class wineDisplay extends AppCompatActivity {
         //Wine.findWine(MainActivity.currentWine.wineID);
         // set the wineToShow to be the one stored in currentWine
         Wine wineToShow = MainActivity.currentWine;
+        TraceabilityInformation traceToShow = TraceabilityInformation.determineTraceabilityInformation(wineToShow);
+        DecimalFormat df = new DecimalFormat("0.00");
+
+        double transDifference = (traceToShow.transportImpact - 0.655) / 0.655 * 100;
+
+        double agriDifference = (traceToShow.agricultureImpact - 0.3125) / 0.3125 * 100;
+
+
+
+
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wine_display);
@@ -61,27 +76,79 @@ public class wineDisplay extends AppCompatActivity {
 
 
 
+
         TextView textViewToChangeName = (TextView) findViewById(R.id.nameVAR);
         textViewToChangeName.setText(
                 "" + wineToShow.name);
 
+
+
+        TextView textViewToTransport = (TextView) findViewById(R.id.transport);
+            if (transDifference > 0) {
+                //textViewToTransport.setTextColor(0-102-0);
+                textViewToTransport.setText(
+                        "" + df.format(transDifference) + "%");
+            } else {
+                //textViewToTransport.setTextColor(255-102-0);
+                textViewToTransport.setText(
+                        "" + df.format(transDifference * -1) + "%");
+        }
+
+        TextView textViewToTransportText = (TextView) findViewById(R.id.transporttext);
+        if (transDifference > 0) {
+            textViewToTransportText.setText(
+                    "This wine uses " + df.format(transDifference) + "% more CO2-e on transport than the average wine");
+        } else {
+            textViewToTransportText.setText(
+                    "This wine uses " + df.format(transDifference * -1) + "% less CO2-e on transport than the average wine");
+        }
+
+        TextView textViewToArgiculture = (TextView) findViewById(R.id.agriculture);
+            if (agriDifference > 0) {
+                //textViewToArgiculture.setTextColor(0-102-0);
+                textViewToArgiculture.setText(
+                        "" + df.format(agriDifference) + "%");
+            } else {
+                //textViewToArgiculture.setTextColor(255-102-0);
+                textViewToArgiculture.setText(
+                        "" + df.format(agriDifference * -1) + "%");
+            }
+
+        TextView textViewToArgicultureText = (TextView) findViewById(R.id.agriculturetext);
+        if (agriDifference > 0) {
+            textViewToArgicultureText.setText(
+                    "This wine uses " + df.format(agriDifference) + "% more CO2-e during farming than the average wine");
+        } else {
+            textViewToArgicultureText.setText(
+                    "This wine uses " + df.format(agriDifference * -1) + "% less CO2-e during farming than the average wine");
+        }
+
+
+
+
+
+
+
         // we use year as a placeholder for country :)
-        TextView textViewToChangeCountry = (TextView) findViewById(R.id.countryVAR);
-        textViewToChangeCountry.setText(
-                "Country: " + wineToShow.year);
+        //TextView textViewToChangeCountry = (TextView) findViewById(R.id.countryVAR);
+        //textViewToChangeCountry.setText(
+                //"Country: " + wineToShow.year);
 
-        TextView textViewToChangeGrape = (TextView) findViewById(R.id.grapeVAR);
-        textViewToChangeGrape.setText(
-                "Grape: " + wineToShow.grape);
+        //TextView textViewToChangeGrape = (TextView) findViewById(R.id.grapeVAR);
+       // textViewToChangeGrape.setText(
+               // "Grape: " + wineToShow.grape);
 
-        TextView textViewToChangeType = (TextView) findViewById(R.id.typeVAR);
-        textViewToChangeType.setText(
-                "Grape: " + wineToShow.type);
+        //TextView textViewToChangeType = (TextView) findViewById(R.id.typeVAR);
+        // textViewToChangeType.setText(
+             //   "Grape: " + wineToShow.type);
 
         /*final TextView textViewToChangeRating = (TextView) findViewById(R.id.ratingVAR);
         textViewToChangeRating.setText(
                 "Rating: ");
                 */
+
+
+
         // button to add and remove
         Button button = (Button) findViewById(R.id.addRemove);
         //button to read more
