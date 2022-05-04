@@ -86,6 +86,7 @@ public class SearchAllWines extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_all_wines);
 
+
         //setup our actionbar to make it clickable
         //ActionBar actionBar = getActionBar();
         // we set the action bar to be clickable and to have an arrow
@@ -125,6 +126,7 @@ public class SearchAllWines extends AppCompatActivity {
         });
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linLayoutAllWine);
+
 
         // we try to use the searchAllWines method - if that returns an exception, set the textView
         // to be an error message!
