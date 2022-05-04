@@ -15,6 +15,7 @@ public class TraceabilityInformation {
     public double transportImpact;
     public double retailImpact;
 
+
     /**
      * Constructor for TraceabilityInformation objects
      * @param wineType is a String corresponding to the type of wine (e.g. red)
@@ -72,12 +73,20 @@ public class TraceabilityInformation {
      */
     public static ArrayList<TraceabilityInformation> createTraceabilityInformation() {
         ArrayList<TraceabilityInformation> traceabilityInformationList = new ArrayList<TraceabilityInformation>();
-        TraceabilityInformation redWine = new TraceabilityInformation("Red",0.31, 0.07, 0.40, 0.41, 0.68, 0.01);
+        TraceabilityInformation redWine = new TraceabilityInformation("Red",0.34, 0.05, 0.45, 0.31, 0.68, 0.03);
         traceabilityInformationList.add(redWine);
-        TraceabilityInformation roseWine = new TraceabilityInformation("Rosé",0.31, 0.07, 0.40, 0.41, 0.68, 0.01);
+        TraceabilityInformation roseWine = new TraceabilityInformation("Rosé",0.29, 0.06, 0.40, 0.40, 0.65, 0.01);
         traceabilityInformationList.add(roseWine);
-        TraceabilityInformation whiteWine = new TraceabilityInformation("White", 0.31, 0.07, 0.40, 0.41, 0.68, 0.01);
+        TraceabilityInformation whiteWine = new TraceabilityInformation("White", 0.31, 0.10, 0.41, 0.36, 0.61, 0.02);
         traceabilityInformationList.add(whiteWine);
+
+
+        TraceabilityInformation mediumWine = new TraceabilityInformation("Medium", 0.3125, 0.07, 0.415, 0.37, 0.655, 0.0175);
+        traceabilityInformationList.add(mediumWine);
+
+
+
+
         // we run into problems here - LWIN does not see sparkling as separate from the other three categories
         // this means that we will never see wines that are JUST sparkling, and as such this method
         // loses some sophistication and flexibility here
@@ -85,6 +94,8 @@ public class TraceabilityInformation {
         // we keep the object here, but that is a sacrifice we make
         TraceabilityInformation sparklingWine = new TraceabilityInformation("Sparkling", 0.31, 0.07, 0.40, 0.41, 0.68, 0.01);
         traceabilityInformationList.add(sparklingWine);
+
+
 
         return traceabilityInformationList;
     }
