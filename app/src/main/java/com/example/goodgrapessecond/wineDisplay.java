@@ -82,7 +82,6 @@ public class wineDisplay extends AppCompatActivity {
                 "" + wineToShow.name);
 
 
-
         TextView textViewToTransport = (TextView) findViewById(R.id.transport);
             if (transDifference > 0) {
                 //textViewToTransport.setTextColor(0-102-0);
@@ -142,10 +141,7 @@ public class wineDisplay extends AppCompatActivity {
         // textViewToChangeType.setText(
              //   "Grape: " + wineToShow.type);
 
-        /*final TextView textViewToChangeRating = (TextView) findViewById(R.id.ratingVAR);
-        textViewToChangeRating.setText(
-                "Rating: ");
-                */
+      
 
 
 
@@ -153,6 +149,8 @@ public class wineDisplay extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.addRemove);
         //button to read more
         Button buttonRead = (Button) findViewById(R.id.readMore);
+        // set right of button to be the drawable of a forward arrow
+        buttonRead.setCompoundDrawablesWithIntrinsicBounds( 0, 0,R.drawable.ic_ai_forward, 0);
         // apparently libSaved is always false, like below?? WHY????
         if (wineToShow.libSaved == true) {
             button.setText("Remove from favorites");

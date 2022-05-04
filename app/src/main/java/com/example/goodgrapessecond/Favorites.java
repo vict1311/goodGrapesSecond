@@ -34,7 +34,7 @@ public class Favorites extends AppCompatActivity {
                 newText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.mipmap.wine_bottle_foreground,0);
                 //add padding to newText with some pixels on top and bottom
                 newText.setPadding(0, 35, 0, 35);
-
+                newText.setTextColor(getResources().getColor(R.color.black));
 
                 linearLayout.addView(newText);
 
@@ -77,8 +77,6 @@ public class Favorites extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.favorites:
-                        startActivity(new Intent(getApplicationContext(), Favorites.class));
-                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.profile:
                         startActivity(new Intent(getApplicationContext(),Profile.class));

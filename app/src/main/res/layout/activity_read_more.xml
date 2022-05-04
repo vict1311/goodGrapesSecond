@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ReadMore"
     android:background="@color/white">
-
-
-    <TextView
-        android:id="@+id/textTrace"
-        android:layout_width="149dp"
-        android:layout_height="299dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textProduct"
-        app:layout_constraintTop_toBottomOf="@+id/nameVAR" />
-
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -56,16 +43,6 @@
         tools:ignore="TextContrastCheck"  />
 
     <TextView
-        android:id="@+id/textProduct"
-        android:layout_width="142dp"
-        android:layout_height="297dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="40dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameVAR" />
-
-    <TextView
         android:id="@+id/sources"
         android:layout_width="276dp"
         android:layout_height="89dp"
@@ -81,16 +58,35 @@
 
     <ScrollView
         android:layout_width="408dp"
-        android:layout_height="571dp"
+        android:layout_height="253dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintBottom_toTopOf="@+id/sources"
         app:layout_constraintTop_toBottomOf="@+id/nameVAR"
-        tools:layout_editor_absoluteX="1dp">
+        app:layout_constraintVertical_bias="0.252"
+        tools:layout_editor_absoluteX="3dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textProduct"
+                android:layout_width="142dp"
+                android:layout_height="297dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="40dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textTrace"
+                android:layout_width="149dp"
+                android:layout_height="299dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="40dp"
+                android:text="TextView" />
+
+        </LinearLayout>
     </ScrollView>
 
 

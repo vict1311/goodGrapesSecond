@@ -31,6 +31,7 @@ public class ProductInformation {
      * @param wineInfo is an object of wine we can use to check for the information
      * Loop through an ArrayList of ProductInformation objects and check if the product ID is the same as the input wineInfo ID
      * set the wineIDProduct of the tempProductInformation object to be the same ID as the wineInfo
+     * set index 1 of wineLinked to be true so we know there is a product information object for the wine
      * @return the ProductInformation object that has the same wineID as the input
      * This method is part of the function component Information Retrieval where it has access to the Wine model component (by way of wineInfo)
      * This method is somewhat flexible as we don't have a predetermined size of the ArrayList to loop through (just as TraceabilityInformation)
@@ -42,6 +43,7 @@ public class ProductInformation {
         for (int i = 0; i < productInformationArrayList.size(); i++) {
             ProductInformation tempProductInformation = productInformationArrayList.get(i);
             if (tempProductInformation.wineIDProduct == wineInfo.wineID) {
+                wineInfo.wineLinked[1] = true;
                 return tempProductInformation;
             }
         }
