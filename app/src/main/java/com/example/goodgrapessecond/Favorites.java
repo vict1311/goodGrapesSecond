@@ -58,15 +58,18 @@ public class Favorites extends AppCompatActivity {
 
     }
 
-
+    //By using onCreate method we call and recreate the activity (which in this case is the navbar)
+    //to be displayed on favorites
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_favorites);
-
+        //then we ask the navbar to high light favorites
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.favorites);
 
-
+        //here we tell the navbar than when one of each icons (search, favorites or profile) is clicked
+        //then the application needs to get the new item and display.
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
