@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ProductInformation {
 
     public String wineIDProduct;
-    public String country;
+
     public String region;
     public String subRegion;
     public String producerName;
@@ -13,14 +13,13 @@ public class ProductInformation {
     /**
      * Constructor for ProductInformation objects
      * @param wineIDProduct is an integer illustrating the ID for the wine product
-     * @param country is a string that is telling which country the wine is from
      * @param region is a string that informs which region the wine is produced
      * @param subRegion is a string that informs which subregion the wine is produced
      * @param producerName is a stirng with the name of the wine producer
      */
-    public ProductInformation(String wineIDProduct, String country, String region, String subRegion, String producerName) {
+    public ProductInformation(String wineIDProduct, String region, String subRegion, String producerName) {
         this.wineIDProduct = wineIDProduct;
-        this.country = country;
+
         this.region = region;
         this.subRegion = subRegion;
         this.producerName = producerName;
@@ -62,15 +61,15 @@ public class ProductInformation {
     public static ArrayList<ProductInformation> createProductInformation() {
         ArrayList<ProductInformation> productInformationList = new ArrayList<ProductInformation>();
         // the first traceabilityInformation trace1 does not have a sub-region - we use the one right above it in LWIN
-        ProductInformation trace1 = new ProductInformation("0", "France", "Alsace", "Altenberg de Bergheim", "Schieferkopf");
+        ProductInformation trace1 = new ProductInformation("0", "Alsace", "Altenberg de Bergheim", "Schieferkopf");
         productInformationList.add(trace1);
-        ProductInformation trace2 = new ProductInformation( "1", "France", "Alsace", "N/A", "Trimbach");
+        ProductInformation trace2 = new ProductInformation( "1", "Alsace", "N/A", "Trimbach");
         productInformationList.add(trace2);
-        ProductInformation trace3 = new ProductInformation("2", "Argentina", "Mendoza", "N/A", "Alta Vista");
+        ProductInformation trace3 = new ProductInformation("2", "Mendoza", "N/A", "Alta Vista");
         productInformationList.add(trace3);
-        ProductInformation trace4 = new ProductInformation( "3", "France", "Champagne", "N/A", "Deutz");
+        ProductInformation trace4 = new ProductInformation( "3", "Champagne", "N/A", "Deutz");
         productInformationList.add(trace4);
-        ProductInformation trace5 = new ProductInformation("4", "Australia", "South Australia", "Barossa Valley", "Magpie Estate");
+        ProductInformation trace5 = new ProductInformation("4", "South Australia", "Barossa Valley", "Magpie Estate");
         productInformationList.add(trace5);
 
         return productInformationList;

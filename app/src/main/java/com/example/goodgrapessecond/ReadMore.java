@@ -84,9 +84,42 @@ public class ReadMore extends AppCompatActivity {
 
         // set textview for the product information
         TextView productView = (TextView) findViewById(R.id.textProduct);
-        productView.setText("Country: " + newProduct.country + "\r\n\r\nRegion: " + newProduct.region
+        productView.setText("Region: " + newProduct.region
         + "\r\n \r\nSub-region: " + newProduct.subRegion + "\r\n \r\nProducer name: " + newProduct.producerName);
         productView.setTextColor(getResources().getColor(R.color.black));
+
+        // button to add and remove
+        Button button = (Button) findViewById(R.id.addRemove);
+
+        if (wineToShow.libSaved == true) {
+            button.setText("Remove from favorites");
+        }
+        else {
+            button.setText("Add to favorites");
+        }
+
+        button.setOnClickListener(new View.OnClickListener() {
+                                      @Override
+                                      public void onClick(View v) {
+                                          if (wineToShow.libSaved == false) {
+                                              //MainActivity.currentLibrary.removeWineFromLibrary(wineToShow);
+                                              MainActivity.currentLibrary.addWineToLibrary(wineToShow);
+                                              System.out.println(MainActivity.currentLibrary.winesInLib);
+                                              System.out.println(wineToShow.libSaved);
+                                              button.setText("Remove from favorites");
+                                              // we start a new intent
+                                              //Intent i = new Intent(wineDisplay.this, MainActivity.class);
+                                              //startActivity(i);
+                                          }
+                                          else {
+                                              MainActivity.currentLibrary.removeWineFromLibrary(wineToShow);
+                                              System.out.println(MainActivity.currentLibrary.winesInLib);
+                                              System.out.println(wineToShow.libSaved);
+                                              button.setText("Add to favorites");
+                                          }
+                                      }
+                                  }
+        );
 
 
         //System.out.println(MainActivity.wineList.get(0).libSaved);

@@ -19,6 +19,11 @@ public class Wine {
      * the type of wine (red, wine, etc.)
      */
     public String type;
+
+    /**
+     * the countryu the wine is from
+     */
+    public String country;
     /**
      * the grape of the wine
      */
@@ -42,6 +47,7 @@ public class Wine {
     /** constructor to create Wine objects
      * @param wineID is a string that is the ID of the wine
      * @param name is a String defining the name
+     * @param country is the wine's origin country
      * @param grape is the grape sort of a Wine
      * @param type is the general type of wine
      * @param year is the release year of the Wine
@@ -50,9 +56,10 @@ public class Wine {
      * because we can then change libSaved based on the user who is using the app
      * set both booleans of wineLinked to be false
      */
-    public Wine(String wineID, String name, String grape, String type, int year) {
+    public Wine(String wineID, String name, String country, String grape, String type, int year) {
         this.wineID = wineID;
         this.name = name;
+        this.country = country;
         this.grape = grape;
         this.type = type;
         this.year = year;
@@ -68,15 +75,15 @@ public class Wine {
      */
     public static ArrayList<Wine> createWines(){
         ArrayList<Wine> wineList = new ArrayList<Wine>();
-        Wine wine1 = new Wine("0", "Schieferkopf, Sylvaner", "Sylvaner", "White", 2019);
+        Wine wine1 = new Wine("0", "Schieferkopf, Sylvaner", "France", "Sylvaner", "White", 2019);
         wineList.add(wine1);
-        Wine wine2 = new Wine("1", "Trimbach, Pinot Noir Reserve", "Pinot Noir Reserve", "Red", 2018);
+        Wine wine2 = new Wine("1", "Trimbach, Pinot Noir Reserve", "France", "Pinot Noir Reserve", "Red", 2018);
         wineList.add(wine2);
-        Wine wine3 = new Wine("2", "Alta Vista, Alto, Mendoza", "Alto", "Red", 2011);
+        Wine wine3 = new Wine("2", "Alta Vista, Alto, Mendoza", "Argentina","Alto", "Red", 2011);
         wineList.add(wine3);
-        Wine wine4 = new Wine("3", "Deutz, Rose NV", "Rose NV", "Rosé", 2011 );
+        Wine wine4 = new Wine("3", "Deutz, Rose NV", "France","Rose NV", "Rosé", 2011 );
         wineList.add(wine4);
-        Wine wine5 = new Wine("4", "Magpie Estate, Blacksock, Barossa Valley", "Blacksock", "Red", 2014);
+        Wine wine5 = new Wine("4", "Magpie Estate, Blacksock, Barossa Valley", "Australia", "Blacksock", "Red", 2014);
         wineList.add(wine5);
         return wineList;
     }

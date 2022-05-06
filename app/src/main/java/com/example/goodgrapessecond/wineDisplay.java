@@ -37,6 +37,7 @@ public class wineDisplay extends AppCompatActivity {
         TraceabilityInformation traceToShow = TraceabilityInformation.determineTraceabilityInformation(wineToShow);
         DecimalFormat df = new DecimalFormat("0.00");
 
+        // we have calculated the average values for our wines for transport and agriculture traceability information
         double transDifference = (traceToShow.transportImpact - 0.655) / 0.655 * 100;
 
         double agriDifference = (traceToShow.agricultureImpact - 0.3125) / 0.3125 * 100;
@@ -104,11 +105,9 @@ public class wineDisplay extends AppCompatActivity {
 
         TextView textViewToArgiculture = (TextView) findViewById(R.id.agriculture);
             if (agriDifference > 0) {
-                //textViewToArgiculture.setTextColor(0-102-0);
                 textViewToArgiculture.setText(
                         "" + df.format(agriDifference) + "%");
             } else {
-                //textViewToArgiculture.setTextColor(255-102-0);
                 textViewToArgiculture.setText(
                         "" + df.format(agriDifference * -1) + "%");
             }
