@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.example.goodgrapessecond","l":"ProductInformation"},{"p":"com.example.goodgrapessecond","l":"TraceabilityInformation"},{"p":"com.example.goodgrapessecond","l":"User"},{"p":"com.example.goodgrapessecond","l":"UserLibrary"},{"p":"com.example.goodgrapessecond","l":"Wine"}]
