@@ -34,7 +34,7 @@ public class wineDisplay extends AppCompatActivity {
         //Wine.findWine(MainActivity.currentWine.wineID);
         // set the wineToShow to be the one stored in currentWine
         Wine wineToShow = MainActivity.currentWine;
-        TraceabilityInformation traceToShow = TraceabilityInformation.determineTraceabilityInformation(wineToShow);
+        TraceabilityInformation traceToShow = wineToShow.traceabilityRetrieval();
         DecimalFormat df = new DecimalFormat("0.00");
 
         // we have calculated the average values for our wines for transport and agriculture traceability information
